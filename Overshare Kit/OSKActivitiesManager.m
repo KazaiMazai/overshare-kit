@@ -37,6 +37,7 @@
 #import "OSKThingsActivity.h"
 #import "OSKTwitterActivity.h"
 
+
 #if DEBUG == 1
 // DEVELOPMENT KEYS ONLY, YOUR APP SHOULD SUPPLY YOUR APP CREDENTIALS VIA THE CUSTOMIZATIONS DELEGATE.
 static NSString * OSKApplicationCredential_AppDotNet_Dev = @"pZRc4r5hqKsZ73EW8T2dmaQGBcBNVSr6";
@@ -122,6 +123,11 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
             activitiesToAdd = [self builtInActivitiesForMicroblogPostItem:(OSKMicroblogPostContentItem *)item
                                                   excludedActivityTypes:excludedActivityTypes
                                                       requireOperations:requireOperations];
+        }
+        else if ([item.itemType isEqualToString:OSKShareableContentItemType_FacebookMicroblogPost]) {
+            activitiesToAdd = [self builtInActivitiesForFacebookMicroblogPostItem:(OSKFacebookMicroblogPostContentItem *)item
+                                                    excludedActivityTypes:excludedActivityTypes
+                                                        requireOperations:requireOperations];
         }
         else if ([item.itemType isEqualToString:OSKShareableContentItemType_BlogPost]) {
             activitiesToAdd = [self builtInActivitiesForBlogPostItem:(OSKBlogPostContentItem *)item
@@ -220,6 +226,9 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
     additionals = [self contentItemsOfType:OSKShareableContentItemType_MicroblogPost inArray:content.additionalItems];
     [sortedItems addObjectsFromArray:additionals];
     
+    additionals = [self contentItemsOfType:OSKShareableContentItemType_FacebookMicroblogPost inArray:content.additionalItems];
+    [sortedItems addObjectsFromArray:additionals];
+    
     if (content.pasteboardItem) { [sortedItems addObject:content.pasteboardItem]; }
     additionals = [self contentItemsOfType:OSKShareableContentItemType_CopyToPasteboard inArray:content.additionalItems];
     [sortedItems addObjectsFromArray:additionals];
@@ -287,19 +296,25 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
                                                     item:item];
     if (twitter) { [activities addObject:twitter]; }
     
-    OSKFacebookActivity *facebook = [self validActivityForType:[OSKFacebookActivity activityType]
-                                                       class:[OSKFacebookActivity class]
-                                               excludedTypes:excludedActivityTypes
-                                           requireOperations:requireOperations
-                                                        item:item];
-    if (facebook) { [activities addObject:facebook]; }
-    
     OSKAppDotNetActivity *appDotNet = [self validActivityForType:[OSKAppDotNetActivity activityType]
                                                        class:[OSKAppDotNetActivity class]
                                                excludedTypes:excludedActivityTypes
                                            requireOperations:requireOperations
                                                         item:item];
     if (appDotNet) { [activities addObject:appDotNet]; }
+    
+    return activities;
+}
+
+- (NSArray *)builtInActivitiesForFacebookMicroblogPostItem:(OSKFacebookMicroblogPostContentItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
+    NSMutableArray *activities = [[NSMutableArray alloc] init];
+    
+    OSKFacebookActivity *facebook = [self validActivityForType:[OSKFacebookActivity activityType]
+                                                         class:[OSKFacebookActivity class]
+                                                 excludedTypes:excludedActivityTypes
+                                             requireOperations:requireOperations
+                                                          item:item];
+    if (facebook) { [activities addObject:facebook]; }
     
     return activities;
 }
