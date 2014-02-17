@@ -9,6 +9,7 @@
 @import UIKit;
 
 extern NSString * const OSKShareableContentItemType_MicroblogPost;
+extern NSString * const OSKShareableContentItemType_FacebookMicroblogPost;
 extern NSString * const OSKShareableContentItemType_BlogPost;
 extern NSString * const OSKShareableContentItemType_Email;
 extern NSString * const OSKShareableContentItemType_SMS;
@@ -105,7 +106,7 @@ extern NSString * const OSKShareableContentItemType_TextEditing;
 ///---------------------------------------------------
 
 /**
- Content for sharing to microblogging services like Twitter, Facebook, or App.net.
+ Content for sharing to microblogging services like Twitter or App.net.
  */
 @interface OSKMicroblogPostContentItem : OSKShareableContentItem
 
@@ -131,6 +132,15 @@ extern NSString * const OSKShareableContentItemType_TextEditing;
  The longitude component of the user's geolocation.
  */
 @property (nonatomic, assign) double longitude;
+
+@end
+
+/**
+ Special content for sharing to Facebook
+ */
+@interface OSKFacebookMicroblogPostContentItem : OSKMicroblogPostContentItem
+
+
 
 @end
 
