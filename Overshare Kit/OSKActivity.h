@@ -39,6 +39,8 @@ extern NSString * const OSKActivityType_URLScheme_Omnifocus;
 extern NSString * const OSKActivityType_URLScheme_Things;
 extern NSString * const OSKActivityType_URLScheme_Drafts;
 extern NSString * const OSKActivityType_SDK_Pocket;
+extern NSString * const OSKActivityType_SDK_Evernote;
+
 
 @class OSKActivity;
 @class OSKActivityOperation;

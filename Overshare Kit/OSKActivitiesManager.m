@@ -36,6 +36,7 @@
 #import "OSKSMSActivity.h"
 #import "OSKThingsActivity.h"
 #import "OSKTwitterActivity.h"
+#import "OSKEvernoteActivity.h"
 
 
 #if DEBUG == 1
@@ -429,6 +430,13 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
                                                    requireOperations:requireOperations
                                                                 item:item];
     if (readability) { [activities addObject:readability]; }
+    
+     OSKEvernoteActivity *evernote = [self validActivityForType:[OSKEvernoteActivity activityType]
+                                                               class:[OSKEvernoteActivity class]
+                                                       excludedTypes:excludedActivityTypes
+                                                   requireOperations:requireOperations
+                                                                item:item];
+    if (evernote) { [activities addObject:evernote]; }
     
     return activities;
 }

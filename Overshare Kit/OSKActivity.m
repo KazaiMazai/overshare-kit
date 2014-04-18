@@ -42,6 +42,10 @@ NSString * const OSKActivityType_URLScheme_Things = @"OSKActivityType_URLScheme_
 NSString * const OSKActivityType_URLScheme_Drafts = @"OSKActivityType_URLScheme_Drafts";
 NSString * const OSKActivityType_SDK_Pocket = @"OSKActivityType_SDK_Pocket";
 
+NSString * const OSKActivityType_SDK_Evernote = @"OSKActivityType_SDK_Evernote";
+
+
+
 @interface OSKActivity ()
 
 @property (strong, nonatomic, readonly) OSKActivitiesManager *manager;

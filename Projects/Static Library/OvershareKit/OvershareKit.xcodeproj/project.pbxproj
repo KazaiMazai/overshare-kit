@@ -14,7 +14,6 @@
 		139FC8B3189FE9710040414A /* PocketAPILogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F75BF4B1821589800D3681E /* PocketAPILogin.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		139FC8B4189FE9740040414A /* PocketAPIOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F75BF4D1821589800D3681E /* PocketAPIOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		139FC8B5189FE97A0040414A /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F75BF501821589800D3681E /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		139FC8B6189FEBA90040414A /* OvershareKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7FE4109D1821994B00B13AB1 /* OvershareKit.h */; };
 		139FC8B7189FEBA90040414A /* OSKDraftsActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7FD649EA1895EB480021BD50 /* OSKDraftsActivity.h */; };
 		139FC8B8189FEBA90040414A /* OSKPresentationManager_Protected.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F4FF50E18516A5A00BFFF2B /* OSKPresentationManager_Protected.h */; };
 		139FC8B9189FEBA90040414A /* OSKSession.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7F55A30418425C6C004A3BCC /* OSKSession.h */; };
@@ -341,7 +340,46 @@
 		7FEE78F9181ED8FE000F684A /* UIDevice+OSKHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE78AA181ED8FE000F684A /* UIDevice+OSKHardware.m */; };
 		7FEE78FA181ED8FE000F684A /* UIView+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE78AC181ED8FE000F684A /* UIView+OSKUtilities.m */; };
 		7FEE78FB181ED8FE000F684A /* UIViewController+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE78AE181ED8FE000F684A /* UIViewController+OSKUtilities.m */; };
+		EAAE677E19014C990027EACE /* OvershareKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7FE4109D1821994B00B13AB1 /* OvershareKit.h */; };
+		EAAE679719014FDC0027EACE /* libevernote-sdk-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAE678A19014E9E0027EACE /* libevernote-sdk-ios.a */; };
+		EAAE67D2190164C10027EACE /* OSKEvernoteActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EAB19B151901158D007A8D31 /* OSKEvernoteActivity.h */; };
+		EAB19B171901158D007A8D31 /* OSKEvernoteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB19B161901158D007A8D31 /* OSKEvernoteActivity.m */; };
+		EAB19C4519012230007A8D31 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C4419012230007A8D31 /* Security.framework */; };
+		EAB19C471901223A007A8D31 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C461901223A007A8D31 /* StoreKit.framework */; };
+		EAB19C4919012242007A8D31 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C4819012242007A8D31 /* MobileCoreServices.framework */; };
+		EAB19C4B19012250007A8D31 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C4A19012250007A8D31 /* libxml2.dylib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EAAE678919014E9E0027EACE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAE678319014E9E0027EACE /* evernote-sdk-ios.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0BB3D1AD1524ED96001C4534;
+			remoteInfo = "evernote-sdk-ios";
+		};
+		EAAE678B19014E9E0027EACE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAE678319014E9E0027EACE /* evernote-sdk-ios.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0BB3D26E1524EF37001C4534;
+			remoteInfo = SampleApp;
+		};
+		EAAE678D19014E9E0027EACE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAE678319014E9E0027EACE /* evernote-sdk-ios.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0BDBBC431550A11A003E6681;
+			remoteInfo = UnitTests;
+		};
+		EAAE679019014EF30027EACE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAE678319014E9E0027EACE /* evernote-sdk-ios.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BB3D1AC1524ED96001C4534;
+			remoteInfo = "evernote-sdk-ios";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		7FEE7668181ED867000F684A /* CopyFiles */ = {
@@ -350,7 +388,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				139FC8B6189FEBA90040414A /* OvershareKit.h in CopyFiles */,
+				EAAE67D2190164C10027EACE /* OSKEvernoteActivity.h in CopyFiles */,
+				EAAE677E19014C990027EACE /* OvershareKit.h in CopyFiles */,
 				139FC8B7189FEBA90040414A /* OSKDraftsActivity.h in CopyFiles */,
 				139FC8B8189FEBA90040414A /* OSKPresentationManager_Protected.h in CopyFiles */,
 				139FC8B9189FEBA90040414A /* OSKSession.h in CopyFiles */,
@@ -817,6 +856,13 @@
 		7FFCFFEA1822CE23000BBCE9 /* OSKPresentationLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKPresentationLocalization.h; sourceTree = "<group>"; };
 		7FFCFFEB1822CE23000BBCE9 /* OSKPresentationStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKPresentationStyle.h; sourceTree = "<group>"; };
 		7FFCFFEC1822CE23000BBCE9 /* OSKPresentationViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKPresentationViewControllers.h; sourceTree = "<group>"; };
+		EAAE678319014E9E0027EACE /* evernote-sdk-ios.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "evernote-sdk-ios.xcodeproj"; path = "../../../Dependencies/EvernoteSDK/evernote-sdk-ios.xcodeproj"; sourceTree = "<group>"; };
+		EAB19B151901158D007A8D31 /* OSKEvernoteActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKEvernoteActivity.h; sourceTree = "<group>"; };
+		EAB19B161901158D007A8D31 /* OSKEvernoteActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSKEvernoteActivity.m; sourceTree = "<group>"; };
+		EAB19C4419012230007A8D31 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EAB19C461901223A007A8D31 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EAB19C4819012242007A8D31 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		EAB19C4A19012250007A8D31 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -832,6 +878,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAAE679719014FDC0027EACE /* libevernote-sdk-ios.a in Frameworks */,
+				EAB19C4B19012250007A8D31 /* libxml2.dylib in Frameworks */,
+				EAB19C4919012242007A8D31 /* MobileCoreServices.framework in Frameworks */,
+				EAB19C471901223A007A8D31 /* StoreKit.framework in Frameworks */,
+				EAB19C4519012230007A8D31 /* Security.framework in Frameworks */,
 				139FC8AF189FE8F40040414A /* UIKit.framework in Frameworks */,
 				7FEE766E181ED867000F684A /* Foundation.framework in Frameworks */,
 			);
@@ -861,6 +912,7 @@
 		7F6711F8181EDF870006E037 /* Third-Party Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				EAAE678319014E9E0027EACE /* evernote-sdk-ios.xcodeproj */,
 				7F6711F9181EDF900006E037 /* ADNLogin */,
 				7F6711FA181EDF960006E037 /* Pocket */,
 			);
@@ -919,6 +971,10 @@
 		7FEE766C181ED867000F684A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAB19C4A19012250007A8D31 /* libxml2.dylib */,
+				EAB19C4819012242007A8D31 /* MobileCoreServices.framework */,
+				EAB19C461901223A007A8D31 /* StoreKit.framework */,
+				EAB19C4419012230007A8D31 /* Security.framework */,
 				139FC8AE189FE8F40040414A /* UIKit.framework */,
 				7FEE766D181ED867000F684A /* Foundation.framework */,
 				7FEE767B181ED867000F684A /* XCTest.framework */,
@@ -950,6 +1006,8 @@
 		7FEE77DC181ED8FE000F684A /* Overshare Kit */ = {
 			isa = PBXGroup;
 			children = (
+				EAB19B151901158D007A8D31 /* OSKEvernoteActivity.h */,
+				EAB19B161901158D007A8D31 /* OSKEvernoteActivity.m */,
 				7FEE77DD181ED8FE000F684A /* Images */,
 				7FE4109D1821994B00B13AB1 /* OvershareKit.h */,
 				7FD649EA1895EB480021BD50 /* OSKDraftsActivity.h */,
@@ -1279,6 +1337,16 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		EAAE678419014E9E0027EACE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAAE678A19014E9E0027EACE /* libevernote-sdk-ios.a */,
+				EAAE678C19014E9E0027EACE /* SampleApp.app */,
+				EAAE678E19014E9E0027EACE /* UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1310,6 +1378,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EAAE679119014EF30027EACE /* PBXTargetDependency */,
 			);
 			name = OvershareKit;
 			productName = OvershareKit;
@@ -1335,6 +1404,12 @@
 			mainGroup = 7FEE7661181ED867000F684A;
 			productRefGroup = 7FEE766B181ED867000F684A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EAAE678419014E9E0027EACE /* Products */;
+					ProjectRef = EAAE678319014E9E0027EACE /* evernote-sdk-ios.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7FEE7669181ED867000F684A /* OvershareKit */,
@@ -1342,6 +1417,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EAAE678A19014E9E0027EACE /* libevernote-sdk-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libevernote-sdk-ios.a";
+			remoteRef = EAAE678919014E9E0027EACE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EAAE678C19014E9E0027EACE /* SampleApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SampleApp.app;
+			remoteRef = EAAE678B19014E9E0027EACE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EAAE678E19014E9E0027EACE /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = EAAE678D19014E9E0027EACE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		139FC92818A10A280040414A /* Resources */ = {
@@ -1488,6 +1587,7 @@
 				139FC8B4189FE9740040414A /* PocketAPIOperation.m in Sources */,
 				139FC8B5189FE97A0040414A /* SFHFKeychainUtils.m in Sources */,
 				7FEE78B0181ED8FE000F684A /* NSData+OSKDerp.m in Sources */,
+				EAB19B171901158D007A8D31 /* OSKEvernoteActivity.m in Sources */,
 				7F75BEFE1821539700D3681E /* OSKAccountManagementViewController.m in Sources */,
 				7FEE78C8181ED8FE000F684A /* OSKAppDotNetActivity.m in Sources */,
 				7FEE78F6181ED8FE000F684A /* OSKUsernamePasswordViewController.m in Sources */,
@@ -1583,6 +1683,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		EAAE679119014EF30027EACE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "evernote-sdk-ios";
+			targetProxy = EAAE679019014EF30027EACE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		139FC93018A10A280040414A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -1608,6 +1716,10 @@
 				);
 				INFOPLIST_FILE = "OvershareKitResources/OvershareKitResources-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kazai_mazai/Documents/iWork/Applifto-iOS/Submodules/OvershareKit/Dependencies/EvernoteSDK/UnitTests/3rdParty/OCMock",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1626,6 +1738,10 @@
 				GCC_PREFIX_HEADER = "OvershareKitResources/OvershareKitResources-Prefix.pch";
 				INFOPLIST_FILE = "OvershareKitResources/OvershareKitResources-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kazai_mazai/Documents/iWork/Applifto-iOS/Submodules/OvershareKit/Dependencies/EvernoteSDK/UnitTests/3rdParty/OCMock",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1666,6 +1782,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SRCROOT}/../../../**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1698,6 +1819,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SRCROOT}/../../../**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1710,6 +1836,15 @@
 				DSTROOT = /tmp/OvershareKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OvershareKit/OvershareKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SDKROOT}/usr/include/libxml2",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kazai_mazai/Documents/iWork/Applifto-iOS/Submodules/OvershareKit/Dependencies/EvernoteSDK/UnitTests/3rdParty/OCMock",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1722,6 +1857,15 @@
 				DSTROOT = /tmp/OvershareKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OvershareKit/OvershareKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${SDKROOT}/usr/include/libxml2",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/kazai_mazai/Documents/iWork/Applifto-iOS/Submodules/OvershareKit/Dependencies/EvernoteSDK/UnitTests/3rdParty/OCMock",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
