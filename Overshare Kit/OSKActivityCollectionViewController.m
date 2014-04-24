@@ -10,6 +10,7 @@
 
 #import "OSKActivityCollectionViewCell.h"
 #import "OSKPagedHorizontalLayout.h"
+#import "OSKPresentationManager.h"
 
 @interface OSKActivityCollectionViewController () <OSKPagedHorizontalLayoutDelegate>
 
@@ -55,7 +56,9 @@
 }
 
 - (NSInteger)numberOfVisibleActivitiesPerRow {
-    CGSize size = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+    
+    BOOL viaPopover = [[OSKPresentationManager sharedInstance] isPresentingViaPopover];
+    CGSize size = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad && viaPopover)
                     ? OSKActivityCollectionViewCellSize_Pad
                     : OSKActivityCollectionViewCellSize_Phone;
     return floor(self.view.frame.size.width / size.width);
@@ -111,7 +114,8 @@
 }
 
 - (CGSize)itemSizeForLayout:(OSKPagedHorizontalLayout *)layout {
-    CGSize size = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+    BOOL viaPopover = [[OSKPresentationManager sharedInstance] isPresentingViaPopover];
+    CGSize size = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad && viaPopover)
                     ? OSKActivityCollectionViewCellSize_Pad
                     : OSKActivityCollectionViewCellSize_Phone;
     return size;
