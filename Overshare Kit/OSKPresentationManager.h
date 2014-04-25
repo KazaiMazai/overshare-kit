@@ -79,6 +79,7 @@ extern NSString * const OSKPresentationOption_PresentationEndingHandler;
  */
 + (instancetype)sharedInstance;
 
+- (BOOL)isPresentingViaPopover;
 ///-----------------------------------------------
 /// @name Presenting Default Activity Sheet
 ///-----------------------------------------------
