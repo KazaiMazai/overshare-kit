@@ -347,6 +347,7 @@
 		EAB19C471901223A007A8D31 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C461901223A007A8D31 /* StoreKit.framework */; };
 		EAB19C4919012242007A8D31 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C4819012242007A8D31 /* MobileCoreServices.framework */; };
 		EAB19C4B19012250007A8D31 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C4A19012250007A8D31 /* libxml2.dylib */; };
+		EAE60B61190A89EF0027F5EA /* libevernote-sdk-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE60B4D190A83F30027F5EA /* libevernote-sdk-ios.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -370,6 +371,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 0BDBBC431550A11A003E6681;
 			remoteInfo = UnitTests;
+		};
+		EAE60B5C190A89E50027F5EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BB3D1AC1524ED96001C4534;
+			remoteInfo = "evernote-sdk-ios";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -870,12 +878,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAB19C4B19012250007A8D31 /* libxml2.dylib in Frameworks */,
 				EAB19C4919012242007A8D31 /* MobileCoreServices.framework in Frameworks */,
 				EAB19C471901223A007A8D31 /* StoreKit.framework in Frameworks */,
 				EAB19C4519012230007A8D31 /* Security.framework in Frameworks */,
 				139FC8AF189FE8F40040414A /* UIKit.framework in Frameworks */,
 				7FEE766E181ED867000F684A /* Foundation.framework in Frameworks */,
+				EAB19C4B19012250007A8D31 /* libxml2.dylib in Frameworks */,
+				EAE60B61190A89EF0027F5EA /* libevernote-sdk-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1369,6 +1378,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EAE60B5D190A89E50027F5EA /* PBXTargetDependency */,
 			);
 			name = OvershareKit;
 			productName = OvershareKit;
@@ -1672,6 +1682,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EAE60B5D190A89E50027F5EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "evernote-sdk-ios";
+			targetProxy = EAE60B5C190A89E50027F5EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		139FC93018A10A280040414A /* InfoPlist.strings */ = {
