@@ -340,8 +340,7 @@
 		7FEE78F9181ED8FE000F684A /* UIDevice+OSKHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE78AA181ED8FE000F684A /* UIDevice+OSKHardware.m */; };
 		7FEE78FA181ED8FE000F684A /* UIView+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE78AC181ED8FE000F684A /* UIView+OSKUtilities.m */; };
 		7FEE78FB181ED8FE000F684A /* UIViewController+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE78AE181ED8FE000F684A /* UIViewController+OSKUtilities.m */; };
-		EAAE677E19014C990027EACE /* OvershareKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7FE4109D1821994B00B13AB1 /* OvershareKit.h */; };
-		EAAE67D2190164C10027EACE /* OSKEvernoteActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EAB19B151901158D007A8D31 /* OSKEvernoteActivity.h */; };
+		EA7FB4E7190AB5350098F101 /* OvershareKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7FE4109D1821994B00B13AB1 /* OvershareKit.h */; };
 		EAB19B171901158D007A8D31 /* OSKEvernoteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB19B161901158D007A8D31 /* OSKEvernoteActivity.m */; };
 		EAB19C4519012230007A8D31 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C4419012230007A8D31 /* Security.framework */; };
 		EAB19C471901223A007A8D31 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C461901223A007A8D31 /* StoreKit.framework */; };
@@ -388,8 +387,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				EAAE67D2190164C10027EACE /* OSKEvernoteActivity.h in CopyFiles */,
-				EAAE677E19014C990027EACE /* OvershareKit.h in CopyFiles */,
+				EA7FB4E7190AB5350098F101 /* OvershareKit.h in CopyFiles */,
 				139FC8B7189FEBA90040414A /* OSKDraftsActivity.h in CopyFiles */,
 				139FC8B8189FEBA90040414A /* OSKPresentationManager_Protected.h in CopyFiles */,
 				139FC8B9189FEBA90040414A /* OSKSession.h in CopyFiles */,
@@ -863,6 +861,12 @@
 		EAB19C4819012242007A8D31 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		EAB19C4A19012250007A8D31 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "evernote-sdk-ios.xcodeproj"; sourceTree = "<group>"; };
+		EAE60BC0190AAEE50027F5EA /* Evernote-Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Evernote-Icon-29.png"; sourceTree = "<group>"; };
+		EAE60BC1190AAEE50027F5EA /* Evernote-Icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Evernote-Icon-29@2x.png"; sourceTree = "<group>"; };
+		EAE60BC2190AAEE50027F5EA /* Evernote-Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Evernote-Icon-60.png"; sourceTree = "<group>"; };
+		EAE60BC3190AAEE50027F5EA /* Evernote-Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Evernote-Icon-60@2x.png"; sourceTree = "<group>"; };
+		EAE60BC4190AAEE50027F5EA /* Evernote-Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Evernote-Icon-76.png"; sourceTree = "<group>"; };
+		EAE60BC5190AAEE50027F5EA /* Evernote-Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Evernote-Icon-76@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1223,6 +1227,12 @@
 		7FEE77DD181ED8FE000F684A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EAE60BC0190AAEE50027F5EA /* Evernote-Icon-29.png */,
+				EAE60BC1190AAEE50027F5EA /* Evernote-Icon-29@2x.png */,
+				EAE60BC2190AAEE50027F5EA /* Evernote-Icon-60.png */,
+				EAE60BC3190AAEE50027F5EA /* Evernote-Icon-60@2x.png */,
+				EAE60BC4190AAEE50027F5EA /* Evernote-Icon-76.png */,
+				EAE60BC5190AAEE50027F5EA /* Evernote-Icon-76@2x.png */,
 				7FD649E51895EB3F0021BD50 /* Drafts-Icon-29.png */,
 				7FD649E61895EB3F0021BD50 /* Drafts-Icon-29@2x.png */,
 				7FD649E71895EB3F0021BD50 /* Drafts-Icon-60@2x.png */,

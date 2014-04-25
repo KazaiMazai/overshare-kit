@@ -11,6 +11,7 @@
 
 #import "OSKPresentationManager.h"
 #import "OSKShareableContentItem.h"
+#import <EvernoteSDK.h>
 
 @interface OSKEvernoteActivity()
 
@@ -42,7 +43,7 @@
 - (void)authenticate:(OSKGenericAuthenticationCompletionHandler)completion {
     
     EvernoteSession *session = [EvernoteSession sharedSession];
-    UIViewController *viewController = [[OSKPresentationManager sharedInstance] authenticationViewControllerForActivity:self];
+    UIViewController *viewController = [OSKPresentationManager sharedInstance].presentingViewController;
     [self setCompletionHandler:completion];
     [self startAuthenticationTimeoutTimer];
     __weak OSKEvernoteActivity *weakSelf = self;
@@ -85,15 +86,15 @@
 + (UIImage *)iconForIdiom:(UIUserInterfaceIdiom)idiom {
     UIImage *image = nil;
     if (idiom == UIUserInterfaceIdiomPhone) {
-        image = [UIImage imageNamed:@"Pocket-Icon-60.png"];
+        image = [UIImage imageNamed:@"Evernote-Icon-60.png"];
     } else {
-        image = [UIImage imageNamed:@"Pocket-Icon-76.png"];
+        image = [UIImage imageNamed:@"Evernote-Icon-76.png"];
     }
     return image;
 }
 
 + (UIImage *)settingsIcon {
-    return [UIImage imageNamed:@"Pocket-Icon-29.png"];
+    return [UIImage imageNamed:@"Evernote-Icon-29.png"];
 }
 
 + (OSKAuthenticationMethod)authenticationMethod {
@@ -109,7 +110,7 @@
 }
 
 - (BOOL)isReadyToPerform {
-    return  ([self readLaterItem].url != nil && [EvernoteSession sharedSession].isAuthenticated);
+    return YES;// ([self readLaterItem].url != nil && [EvernoteSession sharedSession].isAuthenticated);
 }
 
 - (void)performActivity:(OSKActivityCompletionHandler)completion {
@@ -156,7 +157,7 @@
 #pragma mark - Authentication Timeout
 
 - (void)startAuthenticationTimeoutTimer {
-    NSTimer *timer = [[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:60*2]
+    NSTimer *timer = [[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:60*20]
                                               interval:0
                                                 target:self
                                               selector:@selector(authenticationTimedOut:)

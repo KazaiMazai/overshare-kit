@@ -7,8 +7,7 @@
 //
 
 #import "OSKActivity.h"
-#import "OSKActivity_GenericAuthentication.h"
-#import <EvernoteSDK.h>
+#import "OSKActivity_GenericAuthentication.h" 
 
 @interface OSKEvernoteActivity : OSKActivity <OSKActivity_GenericAuthentication>
 

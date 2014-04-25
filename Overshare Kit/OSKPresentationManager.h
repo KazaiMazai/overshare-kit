@@ -70,6 +70,9 @@ extern NSString * const OSKPresentationOption_PresentationEndingHandler;
  */
 @property (weak, nonatomic) id <OSKPresentationViewControllers> viewControllerDelegate;
 
+
+
+@property (strong, nonatomic) UIViewController *presentingViewController;
 ///-----------------------------------------------
 /// @name Singleton Access
 ///-----------------------------------------------
@@ -80,6 +83,8 @@ extern NSString * const OSKPresentationOption_PresentationEndingHandler;
 + (instancetype)sharedInstance;
 
 - (BOOL)isPresentingViaPopover;
+
+
 ///-----------------------------------------------
 /// @name Presenting Default Activity Sheet
 ///-----------------------------------------------

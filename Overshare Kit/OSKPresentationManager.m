@@ -60,7 +60,6 @@ static NSInteger OSKTextViewFontSize_Pad = 20.0f;
 
 // IPHONE
 @property (strong, nonatomic) UIView *shadowView;
-@property (strong, nonatomic) UIViewController *presentingViewController;
 @property (strong, nonatomic) UIViewController *parentMostViewController;
 
 // IPAD
