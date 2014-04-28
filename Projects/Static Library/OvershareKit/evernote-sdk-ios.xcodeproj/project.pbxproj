@@ -159,7 +159,6 @@
 		A9FDF71B165C5D0300DC7E4B /* ENConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FDF717165C5C7100DC7E4B /* ENConstants.m */; };
 		EAE60B65190A8B4B0027F5EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B1E82616C1E73900D54760 /* StoreKit.framework */; };
 		EAE60B66190A8B550027F5EA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98EB3981741B19C005A2D12 /* MobileCoreServices.framework */; };
-		EAE60B67190A8B5F0027F5EA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BE476B1781FAFA00471BF7 /* libxml2.dylib */; };
 		EAE60B6C190A8E100027F5EA /* ENEncryptedContentInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A9BE47C4178200B400471BF7 /* ENEncryptedContentInfo.h */; };
 		EAE60B6D190A8E100027F5EA /* ENMIMEUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A9BE47C6178200B400471BF7 /* ENMIMEUtils.h */; };
 		EAE60B6E190A8E100027F5EA /* ENMLWriter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A9BE47C8178200B400471BF7 /* ENMLWriter.h */; };
@@ -480,7 +479,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAE60B67190A8B5F0027F5EA /* libxml2.dylib in Frameworks */,
 				EAE60B66190A8B550027F5EA /* MobileCoreServices.framework in Frameworks */,
 				EAE60B65190A8B4B0027F5EA /* StoreKit.framework in Frameworks */,
 				0BB3D1B11524ED96001C4534 /* Foundation.framework in Frameworks */,
