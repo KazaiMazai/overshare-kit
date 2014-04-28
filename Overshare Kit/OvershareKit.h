@@ -20,6 +20,7 @@
 #import "OSKAirDropActivity.h"
 #import "OSKAppDotNetActivity.h"
 #import "OSKApplicationCredential.h"
+#import "OSKAuthenticationViewController.h"
 #import "OSKBloggingActivity.h"
 #import "OSKChromeActivity.h"
 #import "OSKCopyToPasteboardActivity.h"
