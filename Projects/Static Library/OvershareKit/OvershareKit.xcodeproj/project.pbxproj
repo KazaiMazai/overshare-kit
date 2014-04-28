@@ -346,6 +346,7 @@
 		EAB19C471901223A007A8D31 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C461901223A007A8D31 /* StoreKit.framework */; };
 		EAB19C4919012242007A8D31 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C4819012242007A8D31 /* MobileCoreServices.framework */; };
 		EAB19C4B19012250007A8D31 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C4A19012250007A8D31 /* libxml2.dylib */; };
+		EAB65E76190EA9F10009E924 /* OSKEvernoteActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EAB19B151901158D007A8D31 /* OSKEvernoteActivity.h */; };
 		EAE60B61190A89EF0027F5EA /* libevernote-sdk-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE60B4D190A83F30027F5EA /* libevernote-sdk-ios.a */; };
 /* End PBXBuildFile section */
 
@@ -387,6 +388,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				EAB65E76190EA9F10009E924 /* OSKEvernoteActivity.h in CopyFiles */,
 				EA7FB4E7190AB5350098F101 /* OvershareKit.h in CopyFiles */,
 				139FC8B7189FEBA90040414A /* OSKDraftsActivity.h in CopyFiles */,
 				139FC8B8189FEBA90040414A /* OSKPresentationManager_Protected.h in CopyFiles */,
