@@ -43,7 +43,7 @@
 - (void)authenticate:(OSKGenericAuthenticationCompletionHandler)completion {
     
     EvernoteSession *session = [EvernoteSession sharedSession];
-    UIViewController *viewController = [OSKPresentationManager sharedInstance].presentingViewController;
+    UIViewController *viewController = [[OSKPresentationManager sharedInstance] authenticationViewControllerForActivity:self];
     [self setCompletionHandler:completion];
     [self startAuthenticationTimeoutTimer];
     __weak OSKEvernoteActivity *weakSelf = self;
@@ -110,15 +110,23 @@
 }
 
 - (BOOL)isReadyToPerform {
-    return YES;// ([self readLaterItem].url != nil && [EvernoteSession sharedSession].isAuthenticated);
+    return ([self readLaterItem].url != nil && [EvernoteSession sharedSession].isAuthenticated);
 }
 
 - (void)performActivity:(OSKActivityCompletionHandler)completion {
     __weak OSKEvernoteActivity *weakSelf = self;
-    EDAMNote *newNote = [[EDAMNote alloc] init];
-    newNote.content = [self readLaterItem].url.path;
-    newNote.title = [self readLaterItem].title;
-    newNote.contentLength = (int)[self readLaterItem].url.path.length;
+    
+    
+    NSString *title = [self readLaterItem].title;
+    
+    NSString *noteContent = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                             "<!DOCTYPE en-note SYSTEM \"http://xml.evernote.com/pub/enml2.dtd\">"
+                             "<en-note>"
+                             "%@ <br/> <br/> %@"
+                             "</en-note>", [[self readLaterItem].url absoluteString], [self readLaterItem].description];
+    
+    EDAMNote *newNote = [[EDAMNote alloc] initWithGuid:nil title:title content:noteContent contentHash:nil contentLength:noteContent.length created:0 updated:0 deleted:0 active:YES updateSequenceNum:0 notebookGuid:nil tagGuids:nil resources:nil attributes:nil tagNames:nil];
+    
     
     UIBackgroundTaskIdentifier backgroundTaskIdentifier = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         if (completion) {
@@ -157,7 +165,7 @@
 #pragma mark - Authentication Timeout
 
 - (void)startAuthenticationTimeoutTimer {
-    NSTimer *timer = [[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:60*20]
+    NSTimer *timer = [[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:60*5]
                                               interval:0
                                                 target:self
                                               selector:@selector(authenticationTimedOut:)
