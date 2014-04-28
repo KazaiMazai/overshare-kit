@@ -30,6 +30,8 @@
 
 @protocol OSKAuthenticationViewController <NSObject>
 
+@optional
+
 @property (weak, nonatomic) id <OSKAuthenticationViewControllerDelegate> delegate;
 @property (strong, nonatomic, readonly) OSKActivity <OSKActivity_ManagedAccounts> *activity;
 
