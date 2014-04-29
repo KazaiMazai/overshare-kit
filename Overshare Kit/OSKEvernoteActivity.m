@@ -12,6 +12,7 @@
 #import "OSKPresentationManager.h"
 #import "OSKShareableContentItem.h"
 #import <EvernoteSDK.h>
+#import "NSString+XMLAdditions.h"
 
 @interface OSKEvernoteActivity()
 
@@ -116,24 +117,23 @@
 - (void)performActivity:(OSKActivityCompletionHandler)completion {
     __weak OSKEvernoteActivity *weakSelf = self;
     
-    
     NSString *title = [self readLaterItem].title;
+    NSString *validatedContent = [[self readLaterItem].description stringByEscapingCriticalXMLEntities];
     
-    NSString *noteContent = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+    NSString *content = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
                              "<!DOCTYPE en-note SYSTEM \"http://xml.evernote.com/pub/enml2.dtd\">"
                              "<en-note>"
                              "%@ <br/> <br/> %@"
-                             "</en-note>", [[self readLaterItem].url absoluteString], [self readLaterItem].description];
+                             "</en-note>", [[self readLaterItem].url absoluteString], validatedContent];
     
-    EDAMNote *newNote = [[EDAMNote alloc] initWithGuid:nil title:title content:noteContent contentHash:nil contentLength:(int32_t)noteContent.length created:0 updated:0 deleted:0 active:YES updateSequenceNum:0 notebookGuid:nil tagGuids:nil resources:nil attributes:nil tagNames:nil];
-    
+    EDAMNote *note = [[EDAMNote alloc] initWithGuid:nil title:title content:content contentHash:nil contentLength:(int32_t)content.length created:0 updated:0 deleted:0 active:YES updateSequenceNum:0 notebookGuid:nil tagGuids:nil resources:nil attributes:nil tagNames:nil];
     
     UIBackgroundTaskIdentifier backgroundTaskIdentifier = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         if (completion) {
             completion(weakSelf, NO, nil);
         }
     }];
-    [[EvernoteNoteStore noteStore] createNote:newNote success:^(EDAMNote *note) {
+    [[EvernoteNoteStore noteStore] createNote:note success:^(EDAMNote *note) {
         if (completion) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion(weakSelf, YES, nil);
@@ -141,6 +141,7 @@
             });
         }
     } failure:^(NSError *error) {
+        NSLog(@"Ever error: %@",error);
         dispatch_async(dispatch_get_main_queue(), ^{
             completion(weakSelf, (error == nil), error);
             [[UIApplication sharedApplication] endBackgroundTask:backgroundTaskIdentifier];
