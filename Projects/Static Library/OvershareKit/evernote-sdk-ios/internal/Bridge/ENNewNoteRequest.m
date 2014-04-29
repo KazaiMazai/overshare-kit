@@ -116,7 +116,7 @@ static NSString *kEN_NewNoteRequest_ReminderTime = @"mReminderTime";
 }
 
 - (uint32_t) totalRequestSize {
-  uint32_t result = [[self content] length];
+  NSUInteger result = [[self content] length];
   NSArray *attachments = self.resourceAttachments;
   for (ENResourceAttachment *anAttachment in attachments) {
     NSData *resourceData = [anAttachment resourceData];
@@ -137,7 +137,7 @@ static NSString *kEN_NewNoteRequest_ReminderTime = @"mReminderTime";
       }
     }
   }
-  return result;
+  return (uint32_t)result;
 }
 
 #pragma mark -

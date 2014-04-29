@@ -125,7 +125,7 @@
                              "%@ <br/> <br/> %@"
                              "</en-note>", [[self readLaterItem].url absoluteString], [self readLaterItem].description];
     
-    EDAMNote *newNote = [[EDAMNote alloc] initWithGuid:nil title:title content:noteContent contentHash:nil contentLength:noteContent.length created:0 updated:0 deleted:0 active:YES updateSequenceNum:0 notebookGuid:nil tagGuids:nil resources:nil attributes:nil tagNames:nil];
+    EDAMNote *newNote = [[EDAMNote alloc] initWithGuid:nil title:title content:noteContent contentHash:nil contentLength:(int32_t)noteContent.length created:0 updated:0 deleted:0 active:YES updateSequenceNum:0 notebookGuid:nil tagGuids:nil resources:nil attributes:nil tagNames:nil];
     
     
     UIBackgroundTaskIdentifier backgroundTaskIdentifier = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{

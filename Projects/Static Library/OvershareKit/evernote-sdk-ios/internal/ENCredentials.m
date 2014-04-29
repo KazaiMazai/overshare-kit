@@ -68,7 +68,7 @@ authenticationToken:(NSString *)authenticationToken
                                    account:self.edamUserId 
                                      error:&error];
     if (!success) {
-        NSLog(@"Error saving to keychain: %@ %d", error, error.code);
+        NSLog(@"Error saving to keychain: %@ %lld", error, (int64_t)error.code);
         return NO;
     } 
     return YES;

@@ -130,11 +130,11 @@ NSString * const ENNoteViewRequestErrorDomain = @"ENNoteViewRequestErrorDomain";
 - (void) encodeWithCoder:(NSCoder *)coder {
 	[coder encodeInt:ENNoteViewRequestCurrentVersion forKey:kEN_NoteViewRequest_VersionKey];
   
-	[coder encodeObject:_noteID forKey:kEN_NoteViewRequest_NoteID];
+    [coder encodeObject:_noteID forKey:kEN_NoteViewRequest_NoteID];
   [coder encodeObject:_searchTerms forKey:kEN_NoteViewRequest_SearchTerms];
   [coder encodeObject:_linkedNotebookID forKey:kEN_NoteViewRequest_LinkedNotebookID];
   [coder encodeObject:_shardID forKey:kEN_NoteViewRequest_ShardID];
-  [coder encodeInt:_userID forKey:kEN_NoteViewRequest_UserID];
+  [coder encodeInteger:(NSInteger)_userID forKey:kEN_NoteViewRequest_UserID];
 }
 
 
@@ -157,7 +157,7 @@ NSString * const ENNoteViewRequestErrorDomain = @"ENNoteViewRequestErrorDomain";
   [ms appendString: @"shardID:"];
   [ms appendFormat: @"\"%@\",", self.shardID];
   [ms appendString: @"userID:"];
-  [ms appendFormat: @"%i,", self.userID];
+  [ms appendFormat: @"%llu,", (uint64_t)self.userID];
   [ms appendString: @"searchTerms:"];
   [ms appendFormat: @"\"%@\"", self.searchTerms];
 	
