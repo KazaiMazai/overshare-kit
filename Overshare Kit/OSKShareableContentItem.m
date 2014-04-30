@@ -10,6 +10,7 @@
 
 NSString * const OSKShareableContentItemType_MicroblogPost = @"OSKShareableContentItemType_MicroblogPost";
 NSString * const OSKShareableContentItemType_FacebookMicroblogPost = @"OSKShareableContentItemType_FacebookMicroblogPost";
+NSString * const OSKShareableContentItemType_VkontakteMicroblogPost = @"OSKShareableContentItemType_VkontakteMicroblogPost";
 NSString * const OSKShareableContentItemType_BlogPost = @"OSKShareableContentItemType_BlogPost";
 NSString * const OSKShareableContentItemType_Email = @"OSKShareableContentItemType_Email";
 NSString * const OSKShareableContentItemType_SMS = @"OSKShareableContentItemType_SMS";
@@ -52,6 +53,14 @@ NSString * const OSKShareableContentItemType_TextEditing = @"OSKShareableContent
 
 - (NSString *)itemType {
     return OSKShareableContentItemType_FacebookMicroblogPost;
+}
+
+@end
+
+@implementation OSKVkontakteMicroblogPostContentItem
+
+- (NSString *)itemType {
+    return OSKShareableContentItemType_VkontakteMicroblogPost;
 }
 
 @end
