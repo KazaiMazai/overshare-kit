@@ -37,16 +37,12 @@
 #pragma mark - Generic Authentication
 
 - (BOOL)isAuthenticated {
-    return [VKSdk isLoggedIn];
+    return ([VKSdk isLoggedIn] || [VKSdk wakeUpSession]);
 }
 
 - (void)authenticate:(OSKGenericAuthenticationCompletionHandler)completion {
-    
     [self setCompletionHandler:completion];
     [self startAuthenticationTimeoutTimer];
-    if ([VKSdk wakeUpSession]) {
-      
-    }
     [VKSdk authorize:@[VK_PER_WALL,VK_PER_PHOTOS]];
 }
 
@@ -119,7 +115,7 @@
         VKRequest *post = [[VKApi wall] post:params];
         [post executeWithResultBlock: ^(VKResponse *response) {
             NSNumber * postId = response.json[@"post_id"];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://vk.com/wall%@_%@", [VKSdk getAccessToken].userId, postId]]];
+           /* [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://vk.com/wall%@_%@", [VKSdk getAccessToken].userId, postId]]];*/
             if (completion) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     completion(weakSelf, YES, nil);
@@ -148,7 +144,7 @@
             VKRequest *post = [[VKApi wall] post:params];
             [post executeWithResultBlock: ^(VKResponse *response) {
                 NSNumber * postId = response.json[@"post_id"];
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://vk.com/wall%@_%@", [VKSdk getAccessToken].userId, postId]]];
+               /* [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://vk.com/wall%@_%@", [VKSdk getAccessToken].userId, postId]]];*/
                 if (completion) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         completion(weakSelf, YES, nil);
@@ -193,8 +189,8 @@
 
 - (void)vkSdkUserDeniedAccess:(VKError *)authorizationError {
     [self cancelAuthenticationTimeoutTimer];
-    if (self.completionHandler) {
-        __weak OSKVkontakteActivity *weakSelf = self;
+    __weak OSKVkontakteActivity *weakSelf = self;
+    if (weakSelf.completionHandler) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSError *error = [NSError errorWithDomain:@"OSKVkontakteActivity" code:408 userInfo:@{NSLocalizedFailureReasonErrorKey:@"Vkontakte authentication fail."}];
             weakSelf.completionHandler(NO, error);
@@ -207,7 +203,15 @@
 }
 
 - (void)vkSdkReceivedNewToken:(VKAccessToken *)newToken {
-    
+    __weak OSKVkontakteActivity *weakSelf = self;
+    [weakSelf cancelAuthenticationTimeoutTimer];
+    if (weakSelf.completionHandler && weakSelf.authenticationTimedOut == NO) {
+       
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.completionHandler(YES,nil);
+        });
+        
+    }
 }
 
 
