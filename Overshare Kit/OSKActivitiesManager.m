@@ -37,7 +37,7 @@
 #import "OSKThingsActivity.h"
 #import "OSKTwitterActivity.h"
 #import "OSKEvernoteActivity.h"
-#import "OSKVkontakteActivity.h"
+#import "OSKVKontakteActivity.h"
 
 
 #if DEBUG == 1
@@ -330,8 +330,8 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
 - (NSArray *)builtInActivitiesForVkontakteMicroblogPostItem:(OSKVkontakteMicroblogPostContentItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
     NSMutableArray *activities = [[NSMutableArray alloc] init];
     
-    OSKVkontakteActivity *vk = [self validActivityForType:[OSKVkontakteActivity activityType]
-                                                         class:[OSKVkontakteActivity class]
+    OSKVKontakteActivity *vk = [self validActivityForType:[OSKVKontakteActivity activityType]
+                                                         class:[OSKVKontakteActivity class]
                                                  excludedTypes:excludedActivityTypes
                                              requireOperations:requireOperations
                                                           item:item];
