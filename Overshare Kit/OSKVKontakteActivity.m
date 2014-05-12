@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Overshare Kit. All rights reserved.
 //
 
-#import "OSKVkontakteActivity.h"
+#import "OSKVKontakteActivity.h"
 #import "OSKPresentationManager.h"
 #import "OSKShareableContentItem.h"
 #import <VKSdk.h>
 
-@interface OSKVkontakteActivity() <VKSdkDelegate>
+@interface OSKVKontakteActivity() <VKSdkDelegate>
 
 @property (strong, nonatomic) NSTimer *authenticationTimeoutTimer;
 @property (assign, nonatomic) BOOL authenticationTimedOut;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation OSKVkontakteActivity
+@implementation OSKVKontakteActivity
 
 
 - (instancetype)initWithContentItem:(OSKShareableContentItem *)item {
@@ -61,7 +61,7 @@
 }
 
 + (NSString *)activityName {
-    return @"Vkontakte";
+    return @"VK";
 }
 
 + (UIImage *)iconForIdiom:(UIUserInterfaceIdiom)idiom {
@@ -95,7 +95,7 @@
 }
 
 - (void)performActivity:(OSKActivityCompletionHandler)completion {
-    __weak OSKVkontakteActivity *weakSelf = self;
+    __weak OSKVKontakteActivity *weakSelf = self;
     
     NSString *content = [self sharableItem].text;
     NSArray *images = [self sharableItem].images;
@@ -143,8 +143,8 @@
                                 VK_API_MESSAGE : [NSString stringWithFormat:@"%@",content]};
             VKRequest *post = [[VKApi wall] post:params];
             [post executeWithResultBlock: ^(VKResponse *response) {
-                NSNumber * postId = response.json[@"post_id"];
-               /* [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://vk.com/wall%@_%@", [VKSdk getAccessToken].userId, postId]]];*/
+               /* NSNumber * postId = response.json[@"post_id"];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://vk.com/wall%@_%@", [VKSdk getAccessToken].userId, postId]]];*/
                 if (completion) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         completion(weakSelf, YES, nil);
@@ -189,10 +189,10 @@
 
 - (void)vkSdkUserDeniedAccess:(VKError *)authorizationError {
     [self cancelAuthenticationTimeoutTimer];
-    __weak OSKVkontakteActivity *weakSelf = self;
+    __weak OSKVKontakteActivity *weakSelf = self;
     if (weakSelf.completionHandler) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSError *error = [NSError errorWithDomain:@"OSKVkontakteActivity" code:408 userInfo:@{NSLocalizedFailureReasonErrorKey:@"Vkontakte authentication fail."}];
+            NSError *error = [NSError errorWithDomain:@"OSKVKontakteActivity" code:408 userInfo:@{NSLocalizedFailureReasonErrorKey:@"VK authentication fail."}];
             weakSelf.completionHandler(NO, error);
         });
     }
@@ -203,7 +203,7 @@
 }
 
 - (void)vkSdkReceivedNewToken:(VKAccessToken *)newToken {
-    __weak OSKVkontakteActivity *weakSelf = self;
+    __weak OSKVKontakteActivity *weakSelf = self;
     [weakSelf cancelAuthenticationTimeoutTimer];
     if (weakSelf.completionHandler && weakSelf.authenticationTimedOut == NO) {
        
@@ -242,9 +242,9 @@
 - (void)authenticationTimedOut:(NSTimer *)timer {
     [self setAuthenticationTimedOut:YES];
     if (self.completionHandler) {
-        __weak OSKVkontakteActivity *weakSelf = self;
+        __weak OSKVKontakteActivity *weakSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSError *error = [NSError errorWithDomain:@"OSKVkontakteActivity" code:408 userInfo:@{NSLocalizedFailureReasonErrorKey:@"Vkontakte authentication timed out."}];
+            NSError *error = [NSError errorWithDomain:@"OSKVKontakteActivity" code:408 userInfo:@{NSLocalizedFailureReasonErrorKey:@"VK authentication timed out."}];
             weakSelf.completionHandler(NO, error);
         });
     }

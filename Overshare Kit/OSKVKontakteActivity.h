@@ -9,6 +9,6 @@
 #import "OSKActivity.h"
 #import "OSKActivity_GenericAuthentication.h"
 
-@interface OSKVkontakteActivity : OSKActivity <OSKActivity_GenericAuthentication>
+@interface OSKVKontakteActivity : OSKActivity <OSKActivity_GenericAuthentication>
 
 @end
