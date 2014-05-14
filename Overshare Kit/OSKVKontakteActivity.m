@@ -114,8 +114,6 @@
         
         VKRequest *post = [[VKApi wall] post:params];
         [post executeWithResultBlock: ^(VKResponse *response) {
-            NSNumber * postId = response.json[@"post_id"];
-           /* [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://vk.com/wall%@_%@", [VKSdk getAccessToken].userId, postId]]];*/
             if (completion) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     completion(weakSelf, YES, nil);
@@ -143,8 +141,6 @@
                                 VK_API_MESSAGE : [NSString stringWithFormat:@"%@",content]};
             VKRequest *post = [[VKApi wall] post:params];
             [post executeWithResultBlock: ^(VKResponse *response) {
-               /* NSNumber * postId = response.json[@"post_id"];
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://vk.com/wall%@_%@", [VKSdk getAccessToken].userId, postId]]];*/
                 if (completion) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         completion(weakSelf, YES, nil);
