@@ -37,6 +37,7 @@
 #import "OSKThingsActivity.h"
 #import "OSKTwitterActivity.h"
 #import "OSKEvernoteActivity.h"
+#import "OSKVKontakteActivity.h"
 
 
 #if DEBUG == 1
@@ -129,6 +130,11 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
             activitiesToAdd = [self builtInActivitiesForFacebookMicroblogPostItem:(OSKFacebookMicroblogPostContentItem *)item
                                                     excludedActivityTypes:excludedActivityTypes
                                                         requireOperations:requireOperations];
+        }
+        else if ([item.itemType isEqualToString:OSKShareableContentItemType_VkontakteMicroblogPost]) {
+            activitiesToAdd = [self builtInActivitiesForVkontakteMicroblogPostItem:(OSKVkontakteMicroblogPostContentItem *)item
+                                                            excludedActivityTypes:excludedActivityTypes
+                                                                requireOperations:requireOperations];
         }
         else if ([item.itemType isEqualToString:OSKShareableContentItemType_BlogPost]) {
             activitiesToAdd = [self builtInActivitiesForBlogPostItem:(OSKBlogPostContentItem *)item
@@ -316,6 +322,20 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
                                              requireOperations:requireOperations
                                                           item:item];
     if (facebook) { [activities addObject:facebook]; }
+    
+    return activities;
+}
+
+
+- (NSArray *)builtInActivitiesForVkontakteMicroblogPostItem:(OSKVkontakteMicroblogPostContentItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
+    NSMutableArray *activities = [[NSMutableArray alloc] init];
+    
+    OSKVKontakteActivity *vk = [self validActivityForType:[OSKVKontakteActivity activityType]
+                                                         class:[OSKVKontakteActivity class]
+                                                 excludedTypes:excludedActivityTypes
+                                             requireOperations:requireOperations
+                                                          item:item];
+    if (vk) { [activities addObject:vk]; }
     
     return activities;
 }

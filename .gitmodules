@@ -8,3 +8,6 @@
 [submodule "Dependencies/Evernote-sdk-ios"]
 	path = Dependencies/Evernote-sdk-ios
 	url = git@github.com:KazaiMazai/evernote-sdk-ios.git
+[submodule "Dependencies/Vk-ios-sdk"]
+	path = Dependencies/Vk-ios-sdk
+	url = git@github.com:KazaiMazai/vk-ios-sdk.git

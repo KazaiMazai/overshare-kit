@@ -54,11 +54,18 @@
             // authentication failed :(
             // show an alert, etc
             // ...
+            if (completion && weakSelf.authenticationTimedOut == NO) {
+                [weakSelf cancelAuthenticationTimeoutTimer];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(NO, error);
+                });
+                
+            }
         } else {
             if (completion && weakSelf.authenticationTimedOut == NO) {
                 [weakSelf cancelAuthenticationTimeoutTimer];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    completion((error == nil), error);
+                    completion(YES, error);
                 });
 
             }

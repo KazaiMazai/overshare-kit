@@ -10,6 +10,7 @@
 
 extern NSString * const OSKShareableContentItemType_MicroblogPost;
 extern NSString * const OSKShareableContentItemType_FacebookMicroblogPost;
+extern NSString * const OSKShareableContentItemType_VkontakteMicroblogPost;
 extern NSString * const OSKShareableContentItemType_BlogPost;
 extern NSString * const OSKShareableContentItemType_Email;
 extern NSString * const OSKShareableContentItemType_SMS;
@@ -115,6 +116,8 @@ extern NSString * const OSKShareableContentItemType_TextEditing;
  */
 @property (copy, nonatomic) NSString *text;
 
+@property (copy, nonatomic) NSString *url;
+
 /**
  An optional array of `<UIImage>` objects to be attached to the outgoing post.
  
@@ -140,6 +143,14 @@ extern NSString * const OSKShareableContentItemType_TextEditing;
  */
 @interface OSKFacebookMicroblogPostContentItem : OSKMicroblogPostContentItem
 
+
+
+@end
+
+/**
+ Special content for sharing to Vkontakte
+ */
+@interface OSKVkontakteMicroblogPostContentItem : OSKMicroblogPostContentItem
 
 
 @end

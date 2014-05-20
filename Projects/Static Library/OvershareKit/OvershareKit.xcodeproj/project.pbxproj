@@ -341,6 +341,9 @@
 		7FEE78FA181ED8FE000F684A /* UIView+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE78AC181ED8FE000F684A /* UIView+OSKUtilities.m */; };
 		7FEE78FB181ED8FE000F684A /* UIViewController+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE78AE181ED8FE000F684A /* UIViewController+OSKUtilities.m */; };
 		EA7FB4E7190AB5350098F101 /* OvershareKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7FE4109D1821994B00B13AB1 /* OvershareKit.h */; };
+		EAA4618E1911331600BFB32F /* libVKSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA4615E191132A400BFB32F /* libVKSdk.a */; };
+		EAA461911911340000BFB32F /* OSKVKontakteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA461901911340000BFB32F /* OSKVKontakteActivity.m */; };
+		EAA461AD19114F0100BFB32F /* OSKVKontakteActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EAA4618F1911340000BFB32F /* OSKVKontakteActivity.h */; };
 		EAB19B171901158D007A8D31 /* OSKEvernoteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB19B161901158D007A8D31 /* OSKEvernoteActivity.m */; };
 		EAB19C4519012230007A8D31 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C4419012230007A8D31 /* Security.framework */; };
 		EAB19C471901223A007A8D31 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C461901223A007A8D31 /* StoreKit.framework */; };
@@ -350,6 +353,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EAA4615D191132A400BFB32F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAA46158191132A400BFB32F /* sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3C7542D182133CC00964716;
+			remoteInfo = VKSdk;
+		};
+		EAA4615F191132A400BFB32F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAA46158191132A400BFB32F /* sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3BACC401865905B003158DA;
+			remoteInfo = VKSdkResources;
+		};
+		EAA4618C1911331000BFB32F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAA46158191132A400BFB32F /* sdk.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F3C7542C182133CC00964716;
+			remoteInfo = VKSdk;
+		};
 		EAE60B4C190A83F30027F5EA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */;
@@ -387,6 +411,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				EAA461AD19114F0100BFB32F /* OSKVKontakteActivity.h in CopyFiles */,
 				EAB65E76190EA9F10009E924 /* OSKEvernoteActivity.h in CopyFiles */,
 				EA7FB4E7190AB5350098F101 /* OvershareKit.h in CopyFiles */,
 				139FC8B7189FEBA90040414A /* OSKDraftsActivity.h in CopyFiles */,
@@ -855,6 +880,9 @@
 		7FFCFFEA1822CE23000BBCE9 /* OSKPresentationLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKPresentationLocalization.h; sourceTree = "<group>"; };
 		7FFCFFEB1822CE23000BBCE9 /* OSKPresentationStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKPresentationStyle.h; sourceTree = "<group>"; };
 		7FFCFFEC1822CE23000BBCE9 /* OSKPresentationViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKPresentationViewControllers.h; sourceTree = "<group>"; };
+		EAA46158191132A400BFB32F /* sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sdk.xcodeproj; path = "../../../Dependencies/Vk-ios-sdk/sdk/sdk.xcodeproj"; sourceTree = "<group>"; };
+		EAA4618F1911340000BFB32F /* OSKVKontakteActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKVKontakteActivity.h; sourceTree = "<group>"; };
+		EAA461901911340000BFB32F /* OSKVKontakteActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSKVKontakteActivity.m; sourceTree = "<group>"; };
 		EAB19B151901158D007A8D31 /* OSKEvernoteActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKEvernoteActivity.h; sourceTree = "<group>"; };
 		EAB19B161901158D007A8D31 /* OSKEvernoteActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSKEvernoteActivity.m; sourceTree = "<group>"; };
 		EAB19C4419012230007A8D31 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -883,6 +911,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAA4618E1911331600BFB32F /* libVKSdk.a in Frameworks */,
 				EAB19C4919012242007A8D31 /* MobileCoreServices.framework in Frameworks */,
 				EAB19C471901223A007A8D31 /* StoreKit.framework in Frameworks */,
 				EAB19C4519012230007A8D31 /* Security.framework in Frameworks */,
@@ -916,6 +945,7 @@
 		7F6711F8181EDF870006E037 /* Third-Party Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				EAA461551911327800BFB32F /* vk-ios-sdk */,
 				EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */,
 				7F6711F9181EDF900006E037 /* ADNLogin */,
 				7F6711FA181EDF960006E037 /* Pocket */,
@@ -1219,6 +1249,8 @@
 				7FB34FEA1895ADBE0081C91A /* OSKXCallbackURLInfo.h */,
 				7F75BEFC1821539700D3681E /* UIImage+OSKUtilities.h */,
 				7F75BEFD1821539700D3681E /* UIImage+OSKUtilities.m */,
+				EAA4618F1911340000BFB32F /* OSKVKontakteActivity.h */,
+				EAA461901911340000BFB32F /* OSKVKontakteActivity.m */,
 			);
 			name = "Overshare Kit";
 			path = "../../../Overshare Kit";
@@ -1347,6 +1379,23 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		EAA461551911327800BFB32F /* vk-ios-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				EAA46158191132A400BFB32F /* sdk.xcodeproj */,
+			);
+			name = "vk-ios-sdk";
+			sourceTree = "<group>";
+		};
+		EAA46159191132A400BFB32F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAA4615E191132A400BFB32F /* libVKSdk.a */,
+				EAA46160191132A400BFB32F /* VKSdkResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		EAE60AC7190A83F30027F5EA /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1388,6 +1437,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EAA4618D1911331000BFB32F /* PBXTargetDependency */,
 				EAE60B5D190A89E50027F5EA /* PBXTargetDependency */,
 			);
 			name = OvershareKit;
@@ -1419,6 +1469,10 @@
 					ProductGroup = EAE60AC7190A83F30027F5EA /* Products */;
 					ProjectRef = EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */;
 				},
+				{
+					ProductGroup = EAA46159191132A400BFB32F /* Products */;
+					ProjectRef = EAA46158191132A400BFB32F /* sdk.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1429,6 +1483,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		EAA4615E191132A400BFB32F /* libVKSdk.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libVKSdk.a;
+			remoteRef = EAA4615D191132A400BFB32F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EAA46160191132A400BFB32F /* VKSdkResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = VKSdkResources.bundle;
+			remoteRef = EAA4615F191132A400BFB32F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		EAE60B4D190A83F30027F5EA /* libevernote-sdk-ios.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1685,6 +1753,7 @@
 				7FEE78B1181ED8FE000F684A /* NSDate+OSK_ISO8601.m in Sources */,
 				7FCD02821853975D005C5931 /* OSKActivityToggleCell.m in Sources */,
 				7FE4109F1821994B00B13AB1 /* OSKFacebookPublishingViewController.m in Sources */,
+				EAA461911911340000BFB32F /* OSKVKontakteActivity.m in Sources */,
 				7FEE78B4181ED8FE000F684A /* NSMutableURLRequest+OSKUtilities.m in Sources */,
 				7FEE78EC181ED8FE000F684A /* OSKShareableContentItem.m in Sources */,
 				7FEE78E5181ED8FE000F684A /* OSKPocketActivity.m in Sources */,
@@ -1694,6 +1763,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EAA4618D1911331000BFB32F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VKSdk;
+			targetProxy = EAA4618C1911331000BFB32F /* PBXContainerItemProxy */;
+		};
 		EAE60B5D190A89E50027F5EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "evernote-sdk-ios";
