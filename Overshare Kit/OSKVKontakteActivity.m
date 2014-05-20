@@ -99,6 +99,8 @@
     
     NSString *content = [self sharableItem].text;
     NSArray *images = [self sharableItem].images;
+    NSString *url = [self sharableItem].url;
+    
    
     UIBackgroundTaskIdentifier backgroundTaskIdentifier = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         if (completion) {
@@ -108,54 +110,31 @@
     
     if (images.count == 0) {
         
-        NSDictionary *params = @{VK_API_FRIENDS_ONLY:@(0),
-                                VK_API_OWNER_ID:[VKSdk getAccessToken].userId,
-                                VK_API_MESSAGE:content};
-        
-        VKRequest *post = [[VKApi wall] post:params];
-        [post executeWithResultBlock: ^(VKResponse *response) {
+        [self postText:content andLink:url success:^{
             if (completion) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     completion(weakSelf, YES, nil);
                     [[UIApplication sharedApplication] endBackgroundTask:backgroundTaskIdentifier];
                 });
             }
-            
-        } errorBlock: ^(NSError *error) {
+        } failure:^(NSError *error) {
             NSLog(@"Error: %@", error);
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion(weakSelf, (error == nil), error);
                 [[UIApplication sharedApplication] endBackgroundTask:backgroundTaskIdentifier];
             });
         }];
+        
     } else {
-        UIImage *image = [images objectAtIndex:0];
-        NSString *userId = [VKSdk getAccessToken].userId;
-        VKRequest *request = [VKApi uploadWallPhotoRequest:image parameters:[VKImageParameters jpegImageWithQuality:1.f] userId:[userId integerValue] groupId:0];
-        [request executeWithResultBlock: ^(VKResponse *response) {
-            VKPhoto *photoInfo = [(VKPhotoArray*)response.parsedModel objectAtIndex:0];
-            NSString *photoAttachment = [NSString stringWithFormat:@"photo%@_%@", photoInfo.owner_id, photoInfo.id];
-            NSDictionary *params = @{ VK_API_ATTACHMENTS : photoAttachment,
-                                VK_API_FRIENDS_ONLY : @(0),
-                                VK_API_OWNER_ID : userId,
-                                VK_API_MESSAGE : [NSString stringWithFormat:@"%@",content]};
-            VKRequest *post = [[VKApi wall] post:params];
-            [post executeWithResultBlock: ^(VKResponse *response) {
-                if (completion) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        completion(weakSelf, YES, nil);
-                        [[UIApplication sharedApplication] endBackgroundTask:backgroundTaskIdentifier];
-                    });
-                }
-                
-            } errorBlock: ^(NSError *error) {
-                NSLog(@"Error: %@", error);
+        
+        [self postText:content andImage:[images objectAtIndex:0] success:^{
+            if (completion) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    completion(weakSelf, (error == nil), error);
+                    completion(weakSelf, YES, nil);
                     [[UIApplication sharedApplication] endBackgroundTask:backgroundTaskIdentifier];
                 });
-            }];
-        } errorBlock: ^(NSError *error) {
+            }
+        } failure:^(NSError *error) {
             NSLog(@"Error: %@", error);
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion(weakSelf, (error == nil), error);
@@ -171,6 +150,71 @@
 
 - (OSKActivityOperation *)operationForActivityWithCompletion:(OSKActivityCompletionHandler)completion {
     return nil;
+}
+
+#pragma mark VK post methods
+
+
+- (void) postText:(NSString *) text andImage: (UIImage *) image success:(void (^)())successBlock failure: (void (^)(NSError *error)) failureBlock {
+    
+    NSString *userId = [VKSdk getAccessToken].userId;
+    VKRequest *request = [VKApi uploadWallPhotoRequest:image parameters:[VKImageParameters jpegImageWithQuality:1.f] userId:[userId integerValue] groupId:0];
+    [request executeWithResultBlock: ^(VKResponse *response) {
+        VKPhoto *photoInfo = [(VKPhotoArray*)response.parsedModel objectAtIndex:0];
+        NSString *photoAttachment = [NSString stringWithFormat:@"photo%@_%@", photoInfo.owner_id, photoInfo.id];
+        
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        [params setObject:@(0) forKey:VK_API_FRIENDS_ONLY];
+        [params setObject: userId forKey:VK_API_OWNER_ID];
+        [params setObject: photoAttachment forKey:VK_API_ATTACHMENTS];
+        if (text.length > 0) {
+            [params setObject: text forKey:VK_API_MESSAGE];
+        }
+        
+        VKRequest *post = [[VKApi wall] post:params];
+        [post executeWithResultBlock: ^(VKResponse *response) {
+            if (successBlock) {
+                successBlock();
+            }
+            
+        } errorBlock: ^(NSError *error) {
+            if (failureBlock) {
+                failureBlock(error);
+            }
+        }];
+    } errorBlock: ^(NSError *error) {
+        if (failureBlock) {
+            failureBlock(error);
+        }
+    }];
+}
+
+
+- (void) postText:(NSString *) text andLink: (NSString *) url success:(void (^)())successBlock failure: (void (^)(NSError *error)) failureBlock {
+   
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:@(0) forKey:VK_API_FRIENDS_ONLY];
+    [params setObject:[VKSdk getAccessToken].userId forKey:VK_API_OWNER_ID];
+
+    if (url.length > 0) {
+        [params setObject: url forKey:VK_API_ATTACHMENTS];
+    }
+    
+    if (text.length > 0) {
+         [params setObject: text forKey:VK_API_MESSAGE];
+    }
+    
+    VKRequest *post = [[VKApi wall] post:params];
+    [post executeWithResultBlock: ^(VKResponse *response) {
+        if (successBlock) {
+            successBlock();
+        }
+        
+    } errorBlock: ^(NSError *error) {
+        if (failureBlock) {
+            failureBlock(error);
+        }
+    }];
 }
 
 #pragma mark - VKsdkProtocol

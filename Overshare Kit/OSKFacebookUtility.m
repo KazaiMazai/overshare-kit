@@ -108,7 +108,15 @@
 + (SLRequest *)plainTextMessageRequestForContentItem:(OSKMicroblogPostContentItem *)item options:(NSDictionary *)options account:(ACAccount *)account {
     SLRequest *feedRequest = nil;
     
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:@{@"message": item.text.copy}];
+    
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    if (item.text.length > 0) {
+        [parameters setObject:item.text.copy forKey:@"message"];
+    }
+    if (item.url.length > 0) {
+         [parameters setObject:item.url.copy forKey:@"link"];
+    }
+   
     [parameters setObject:[self _queryParameterForAudience:options[ACFacebookAudienceKey]] forKey:@"privacy"];
     NSURL *feedURL = [NSURL URLWithString:@"https://graph.facebook.com/me/feed"];
     feedRequest = [SLRequest

@@ -116,6 +116,8 @@ extern NSString * const OSKShareableContentItemType_TextEditing;
  */
 @property (copy, nonatomic) NSString *text;
 
+@property (copy, nonatomic) NSString *url;
+
 /**
  An optional array of `<UIImage>` objects to be attached to the outgoing post.
  
@@ -149,7 +151,6 @@ extern NSString * const OSKShareableContentItemType_TextEditing;
  Special content for sharing to Vkontakte
  */
 @interface OSKVkontakteMicroblogPostContentItem : OSKMicroblogPostContentItem
-
 
 
 @end
