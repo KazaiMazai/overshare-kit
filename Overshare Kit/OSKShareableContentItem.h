@@ -335,6 +335,10 @@ extern NSString * const OSKShareableContentItemType_TextEditing;
  */
 @property (copy, nonatomic) NSString *description;
 
+@property (copy, nonatomic) NSString *body;
+
+@property (strong, nonatomic) NSArray *images;
+
 @end
 
 ///-----------------------------------------
