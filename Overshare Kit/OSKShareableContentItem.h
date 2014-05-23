@@ -325,6 +325,8 @@ extern NSString * const OSKShareableContentItemType_TextEditing;
  */
 @property (copy, nonatomic) NSURL *url;
 
+@property (copy, nonatomic) NSURL *optionalUrl;
+
 /**
  An optional title. Not all activities use this.
  */

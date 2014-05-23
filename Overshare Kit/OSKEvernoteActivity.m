@@ -131,8 +131,9 @@
     
     NSString *title = [self readLaterItem].title;
     NSString *strURL = [[self readLaterItem].url absoluteString];
+    NSString *strOptionalURL = [[self readLaterItem].optionalUrl absoluteString];
     NSString *text = [self readLaterItem].body;
-    NSLog(@"%@",text);
+    NSString *description = [[self readLaterItem].description stringByEscapingCriticalXMLEntities];
     NSArray *images = [self readLaterItem].images;
     NSMutableArray *resources = [NSMutableArray array];
     EDAMNoteAttributes *atr =[[EDAMNoteAttributes alloc] init];
@@ -146,13 +147,19 @@
         [contentStr appendFormat:@"<h1>%@</h1>",[title stringByEscapingForHTML]];
     }
     
+    if(text.length>0 ) {
+        [contentStr appendFormat:@"<p>%@</p>", [text flattenHTMLPreservingLineBreaks:YES]];
+    } else {
+        [contentStr appendString:description];
+    }
+    
     if(strURL.length>0) {
         [contentStr appendFormat:@"<p><a href=\"%@\">%@</a></p>",strURL,strURL ];
         atr.sourceURL = strURL;
     }
     
-    if(text.length>0 ) {
-        [contentStr appendFormat:@"<p>%@</p>", [text flattenHTMLPreservingLineBreaks:YES]];
+    if(strOptionalURL.length>0) {
+        [contentStr appendFormat:@"<p><a href=\"%@\">%@</a></p>",strOptionalURL,strOptionalURL ];
     }
     
     for (UIImage *image in images) {
