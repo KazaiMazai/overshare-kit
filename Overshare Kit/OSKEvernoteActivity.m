@@ -13,6 +13,11 @@
 #import "OSKShareableContentItem.h"
 #import <EvernoteSDK.h>
 #import "NSString+XMLAdditions.h"
+#import "NSString+HTMLParsing.h"
+#import "NSData+md5.h"
+
+#define kENMLPrefix @"<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE en-note SYSTEM \"http://xml.evernote.com/pub/enml2.dtd\"><en-note style=\"word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;\">"
+#define kENMLSuffix @"</en-note>"
 
 @interface OSKEvernoteActivity()
 
@@ -125,21 +130,78 @@
     __weak OSKEvernoteActivity *weakSelf = self;
     
     NSString *title = [self readLaterItem].title;
-    NSString *validatedContent = [[self readLaterItem].description stringByEscapingCriticalXMLEntities];
+    NSString *strURL = [[self readLaterItem].url absoluteString];
+    NSString *strOptionalURL = [[self readLaterItem].optionalUrl absoluteString];
+    NSString *text = [self readLaterItem].body;
+    NSString *description = [[self readLaterItem].description stringByEscapingCriticalXMLEntities];
+    NSArray *images = [self readLaterItem].images;
+    NSMutableArray *resources = [NSMutableArray array];
+    EDAMNoteAttributes *atr =[[EDAMNoteAttributes alloc] init];
+ 
+    NSMutableString* contentStr = [[NSMutableString alloc] initWithString:kENMLPrefix];
     
-    NSString *content = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-                             "<!DOCTYPE en-note SYSTEM \"http://xml.evernote.com/pub/enml2.dtd\">"
-                             "<en-note>"
-                             "%@ <br/> <br/> %@"
-                             "</en-note>", [[self readLaterItem].url absoluteString], validatedContent];
+    // Evernote doesn't accept unenencoded ampersands
+    strURL = [strURL encode];
+  
+    if(title.length>0) {
+        [contentStr appendFormat:@"<h1>%@</h1>",[title stringByEscapingForHTML]];
+    }
     
-    EDAMNote *note = [[EDAMNote alloc] initWithGuid:nil title:title content:content contentHash:nil contentLength:(int32_t)content.length created:0 updated:0 deleted:0 active:YES updateSequenceNum:0 notebookGuid:nil tagGuids:nil resources:nil attributes:nil tagNames:nil];
+    if(text.length>0 ) {
+        [contentStr appendFormat:@"<p>%@</p>", [text flattenHTMLPreservingLineBreaks:YES]];
+    } else {
+        [contentStr appendString:description];
+    }
+    
+    if(strURL.length>0) {
+        [contentStr appendFormat:@"<p><a href=\"%@\">%@</a></p>",strURL,strURL ];
+        atr.sourceURL = strURL;
+    }
+    
+    if(strOptionalURL.length>0) {
+        [contentStr appendFormat:@"<p><a href=\"%@\">%@</a></p>",strOptionalURL,strOptionalURL ];
+    }
+    
+    for (UIImage *image in images) {
+        EDAMResource *img = [[EDAMResource alloc] init];
+        NSData *rawimg = UIImageJPEGRepresentation(image, 0.6);
+        EDAMData *imgd = [[EDAMData alloc] initWithBodyHash:rawimg size:(int32_t)[rawimg length] body:rawimg];
+        [img setData:imgd];
+        [img setRecognition:imgd];
+        [img setMime:@"image/jpeg"];
+        [resources addObject:img];
+        [contentStr appendString:[NSString stringWithFormat:@"<p>%@</p>",[self enMediaTagWithResource:img width:image.size.width height:image.size.height]]];
+    }
+    
+    [contentStr appendString:kENMLSuffix];
+    
+    for(EDAMResource *res in resources) {
+        if(![res dataIsSet]&&[res attributesIsSet]&&res.attributes.sourceURL.length>0&&[res.mime isEqualToString:@"image/jpeg"]) {
+            @try {
+                NSData *rawimg = [NSData dataWithContentsOfURL:[NSURL URLWithString:res.attributes.sourceURL]];
+                UIImage *img = [UIImage imageWithData:rawimg];
+                if(img) {
+                    EDAMData *imgd = [[EDAMData alloc] initWithBodyHash:rawimg size:(int32_t)[rawimg length] body:rawimg];
+                    [res setData:imgd];
+                    [res setRecognition:imgd];
+                    contentStr = [NSMutableString stringWithString:[contentStr stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<img src=\"%@\" />",res.attributes.sourceURL] withString:[self enMediaTagWithResource:res width:img.size.width height:img.size.height]]];
+                }
+            }
+            @catch (NSException * e) {
+                NSLog(@"Evernote sharing resources parsing exceprion");
+            }
+        }
+    }
+    
+    
+    EDAMNote *note = [[EDAMNote alloc] initWithGuid:nil title:title content:contentStr contentHash:nil contentLength:(int32_t)contentStr.length created:0 updated:0 deleted:0 active:YES updateSequenceNum:0 notebookGuid:nil tagGuids:nil resources:resources attributes:atr tagNames:nil];
     
     UIBackgroundTaskIdentifier backgroundTaskIdentifier = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         if (completion) {
             completion(weakSelf, NO, nil);
         }
     }];
+    
     [[EvernoteNoteStore noteStore] createNote:note success:^(EDAMNote *note) {
         if (completion) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -169,6 +231,14 @@
 - (OSKReadLaterContentItem *)readLaterItem {
     return (OSKReadLaterContentItem *)self.contentItem;
 }
+
+#pragma mark - Evernote utils
+
+- (NSString *)enMediaTagWithResource:(EDAMResource *)src width:(CGFloat)width height:(CGFloat)height {
+	NSString *sizeAtr = width > 0 && height > 0 ? [NSString stringWithFormat:@"height=\"%.0f\" width=\"%.0f\" ",height,width]:@"";
+	return [NSString stringWithFormat:@"<en-media type=\"%@\" %@hash=\"%@\"/>",src.mime,sizeAtr,[src.data.body md5]];
+}
+
 
 #pragma mark - Authentication Timeout
 
