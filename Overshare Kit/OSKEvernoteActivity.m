@@ -14,7 +14,7 @@
 #import <EvernoteSDK.h>
 #import "NSString+XMLAdditions.h"
 #import "NSString+HTMLParsing.h"
-#import "NSData+md5.h"
+#import "NSData+APCommonCrypto.h"
 
 #define kENMLPrefix @"<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE en-note SYSTEM \"http://xml.evernote.com/pub/enml2.dtd\"><en-note style=\"word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;\">"
 #define kENMLSuffix @"</en-note>"
@@ -236,7 +236,7 @@
 
 - (NSString *)enMediaTagWithResource:(EDAMResource *)src width:(CGFloat)width height:(CGFloat)height {
 	NSString *sizeAtr = width > 0 && height > 0 ? [NSString stringWithFormat:@"height=\"%.0f\" width=\"%.0f\" ",height,width]:@"";
-	return [NSString stringWithFormat:@"<en-media type=\"%@\" %@hash=\"%@\"/>",src.mime,sizeAtr,[src.data.body md5]];
+	return [NSString stringWithFormat:@"<en-media type=\"%@\" %@hash=\"%@\"/>",src.mime,sizeAtr,[src.data.body ap_MD5HashString]];
 }
 
 
