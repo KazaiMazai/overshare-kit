@@ -14,6 +14,7 @@
 @interface OSKMailComposeViewController () <MFMailComposeViewControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) OSKEmailActivity *activity;
+@property (nonatomic) UIStatusBarStyle statusBarStyle;
 
 @end
 
@@ -28,6 +29,17 @@
     }
     return self;
 }
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.statusBarStyle = [UIApplication sharedApplication].statusBarStyle;
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [UIApplication sharedApplication].statusBarStyle =  self.statusBarStyle;
+}
+
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     if (result == MFMailComposeResultCancelled || result == MFMailComposeResultFailed) {
