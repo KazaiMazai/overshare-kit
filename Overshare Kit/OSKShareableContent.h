@@ -21,6 +21,7 @@
 @class OSKPasswordManagementAppSearchContentItem;
 @class OSKAirDropContentItem;
 @class OSKTextEditingContentItem;
+@class OSKLogoutItem;
 
 /**
  `OSKShareableContent` is the highest-level Overshare Kit model object for
@@ -124,6 +125,10 @@
 /**
 These can be custom items, or additional instances of the official items above.
 */
+
+
+@property (strong, nonatomic) OSKLogoutItem *logoutItem;
+
 @property (strong, nonatomic) NSArray * additionalItems;
 
 /**

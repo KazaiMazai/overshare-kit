@@ -289,6 +289,10 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
             [sortedItems addObjectsFromArray:customContentItems.allObjects];
         }
     }
+    
+    if (content.logoutItem) { [sortedItems addObject:content.logoutItem]; }
+    additionals = [self contentItemsOfType:OSKShareableContentItemType_Logout inArray:content.additionalItems];
+    [sortedItems addObjectsFromArray:additionals];
 
     return sortedItems;
 }
