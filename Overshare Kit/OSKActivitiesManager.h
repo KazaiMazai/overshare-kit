@@ -53,6 +53,10 @@ extern NSString * const OSKActivitiesManagerActivityTypesKey;
  */
 + (instancetype)sharedInstance;
 
+- (void) logoutFromCurrentActivities;
+
+
+
 ///---------------------------------------
 /// @name Activity Creation and Validation
 ///---------------------------------------
@@ -106,6 +110,7 @@ extern NSString * const OSKActivitiesManagerActivityTypesKey;
  
  These exclusion settings persist across app launches.
  */
+
 - (void)markActivityTypes:(NSArray *)types alwaysExcluded:(BOOL)excluded;
 
 /**

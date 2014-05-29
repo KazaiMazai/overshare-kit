@@ -44,6 +44,8 @@ NSString * const OSKActivityType_SDK_Pocket = @"OSKActivityType_SDK_Pocket";
 NSString * const OSKActivityType_SDK_Evernote = @"OSKActivityType_SDK_Evernote";
 NSString * const OSKActivityType_SDK_Vkontakte = @"OSKActivityType_SDK_Vkontakte";
 
+NSString * const OSKActivityType_Logout = @"OSKActivityType_Logout";
+
 
 @interface OSKActivity ()
 

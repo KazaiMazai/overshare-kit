@@ -52,6 +52,10 @@
     }];
 }
 
+- (void) logoutWithGenericAuthentication {
+    [[PocketAPI sharedAPI] logout];
+}
+
 #pragma mark - Methods for OSKActivity Subclasses
 
 + (NSString *)supportedContentItemType {

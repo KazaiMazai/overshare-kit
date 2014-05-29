@@ -23,6 +23,8 @@ extern NSString * const OSKShareableContentItemType_PasswordManagementAppSearch;
 extern NSString * const OSKShareableContentItemType_ToDoListEntry;
 extern NSString * const OSKShareableContentItemType_AirDrop;
 extern NSString * const OSKShareableContentItemType_TextEditing;
+extern NSString * const OSKShareableContentItemType_Logout;
+
 
 ///---------------------------
 /// @name Abstract Base Class
@@ -152,6 +154,10 @@ extern NSString * const OSKShareableContentItemType_TextEditing;
  */
 @interface OSKVkontakteMicroblogPostContentItem : OSKMicroblogPostContentItem
 
+
+@end
+
+@interface OSKLogoutItem : OSKShareableContentItem
 
 @end
 

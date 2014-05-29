@@ -46,6 +46,11 @@
    return [EvernoteSession sharedSession].isAuthenticated;
 }
 
+- (void) logoutWithGenericAuthentication {
+    if([EvernoteSession sharedSession].isAuthenticated){
+        [[EvernoteSession sharedSession] logout];
+    }
+}
 - (void)authenticate:(OSKGenericAuthenticationCompletionHandler)completion {
     
     EvernoteSession *session = [EvernoteSession sharedSession];

@@ -340,12 +340,14 @@
 		7FEE78F9181ED8FE000F684A /* UIDevice+OSKHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE78AA181ED8FE000F684A /* UIDevice+OSKHardware.m */; };
 		7FEE78FA181ED8FE000F684A /* UIView+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE78AC181ED8FE000F684A /* UIView+OSKUtilities.m */; };
 		7FEE78FB181ED8FE000F684A /* UIViewController+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE78AE181ED8FE000F684A /* UIViewController+OSKUtilities.m */; };
+		EA3DC65F1936246200D61791 /* OSKLogoutActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DC65E1936246200D61791 /* OSKLogoutActivity.m */; };
+		EA3DC6601936247600D61791 /* OSKLogoutActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA3DC65D1936246200D61791 /* OSKLogoutActivity.h */; };
+		EA3DC663193624D200D61791 /* OSKVKontakteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DC662193624D200D61791 /* OSKVKontakteActivity.m */; };
+		EA3DC664193624F300D61791 /* OSKVKontakteActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA3DC661193624D200D61791 /* OSKVKontakteActivity.h */; };
 		EA48BBF2193332E9001C8403 /* NSData+APCommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = EA48BBF1193332E9001C8403 /* NSData+APCommonCrypto.m */; };
 		EA7FB4E7190AB5350098F101 /* OvershareKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7FE4109D1821994B00B13AB1 /* OvershareKit.h */; };
 		EA994E3E192CCD9300BBC073 /* NSString+HTMLParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = EA994E3D192CCD9300BBC073 /* NSString+HTMLParsing.m */; };
 		EAA4618E1911331600BFB32F /* libVKSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA4615E191132A400BFB32F /* libVKSdk.a */; };
-		EAA461911911340000BFB32F /* OSKVKontakteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA461901911340000BFB32F /* OSKVKontakteActivity.m */; };
-		EAA461AD19114F0100BFB32F /* OSKVKontakteActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EAA4618F1911340000BFB32F /* OSKVKontakteActivity.h */; };
 		EAB19B171901158D007A8D31 /* OSKEvernoteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB19B161901158D007A8D31 /* OSKEvernoteActivity.m */; };
 		EAB19C4519012230007A8D31 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C4419012230007A8D31 /* Security.framework */; };
 		EAB19C471901223A007A8D31 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C461901223A007A8D31 /* StoreKit.framework */; };
@@ -413,7 +415,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				EAA461AD19114F0100BFB32F /* OSKVKontakteActivity.h in CopyFiles */,
+				EA3DC664193624F300D61791 /* OSKVKontakteActivity.h in CopyFiles */,
+				EA3DC6601936247600D61791 /* OSKLogoutActivity.h in CopyFiles */,
 				EAB65E76190EA9F10009E924 /* OSKEvernoteActivity.h in CopyFiles */,
 				EA7FB4E7190AB5350098F101 /* OvershareKit.h in CopyFiles */,
 				139FC8B7189FEBA90040414A /* OSKDraftsActivity.h in CopyFiles */,
@@ -882,13 +885,15 @@
 		7FFCFFEA1822CE23000BBCE9 /* OSKPresentationLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKPresentationLocalization.h; sourceTree = "<group>"; };
 		7FFCFFEB1822CE23000BBCE9 /* OSKPresentationStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKPresentationStyle.h; sourceTree = "<group>"; };
 		7FFCFFEC1822CE23000BBCE9 /* OSKPresentationViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKPresentationViewControllers.h; sourceTree = "<group>"; };
+		EA3DC65D1936246200D61791 /* OSKLogoutActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKLogoutActivity.h; sourceTree = "<group>"; };
+		EA3DC65E1936246200D61791 /* OSKLogoutActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSKLogoutActivity.m; sourceTree = "<group>"; };
+		EA3DC661193624D200D61791 /* OSKVKontakteActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKVKontakteActivity.h; sourceTree = "<group>"; };
+		EA3DC662193624D200D61791 /* OSKVKontakteActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSKVKontakteActivity.m; sourceTree = "<group>"; };
 		EA48BBF0193332E9001C8403 /* NSData+APCommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+APCommonCrypto.h"; sourceTree = "<group>"; };
 		EA48BBF1193332E9001C8403 /* NSData+APCommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+APCommonCrypto.m"; sourceTree = "<group>"; };
 		EA994E3C192CCD9300BBC073 /* NSString+HTMLParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTMLParsing.h"; sourceTree = "<group>"; };
 		EA994E3D192CCD9300BBC073 /* NSString+HTMLParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTMLParsing.m"; sourceTree = "<group>"; };
 		EAA46158191132A400BFB32F /* sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sdk.xcodeproj; path = "../../../Dependencies/Vk-ios-sdk/sdk/sdk.xcodeproj"; sourceTree = "<group>"; };
-		EAA4618F1911340000BFB32F /* OSKVKontakteActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKVKontakteActivity.h; sourceTree = "<group>"; };
-		EAA461901911340000BFB32F /* OSKVKontakteActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSKVKontakteActivity.m; sourceTree = "<group>"; };
 		EAB19B151901158D007A8D31 /* OSKEvernoteActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKEvernoteActivity.h; sourceTree = "<group>"; };
 		EAB19B161901158D007A8D31 /* OSKEvernoteActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSKEvernoteActivity.m; sourceTree = "<group>"; };
 		EAB19C4419012230007A8D31 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -1249,15 +1254,17 @@
 				7FCD02801853975D005C5931 /* OSKActivityToggleCell.h */,
 				7FCD02811853975D005C5931 /* OSKActivityToggleCell.m */,
 				7F75BEF81821539700D3681E /* OSKFacebookUtility.h */,
+				EA3DC661193624D200D61791 /* OSKVKontakteActivity.h */,
+				EA3DC662193624D200D61791 /* OSKVKontakteActivity.m */,
 				7F75BEF91821539700D3681E /* OSKFacebookUtility.m */,
 				7F75BEFA1821539700D3681E /* OSKPocketAccountViewController.h */,
 				7F75BEFB1821539700D3681E /* OSKPocketAccountViewController.m */,
 				7FB34FE91895ADBE0081C91A /* OSKURLSchemeActivity.h */,
+				EA3DC65D1936246200D61791 /* OSKLogoutActivity.h */,
+				EA3DC65E1936246200D61791 /* OSKLogoutActivity.m */,
 				7FB34FEA1895ADBE0081C91A /* OSKXCallbackURLInfo.h */,
 				7F75BEFC1821539700D3681E /* UIImage+OSKUtilities.h */,
 				7F75BEFD1821539700D3681E /* UIImage+OSKUtilities.m */,
-				EAA4618F1911340000BFB32F /* OSKVKontakteActivity.h */,
-				EAA461901911340000BFB32F /* OSKVKontakteActivity.m */,
 			);
 			name = "Overshare Kit";
 			path = "../../../Overshare Kit";
@@ -1703,6 +1710,7 @@
 				7FEE78E2181ED8FE000F684A /* OSKPagedHorizontalLayout.m in Sources */,
 				7FEE78C2181ED8FE000F684A /* OSKActivityOperation.m in Sources */,
 				7FEE78DA181ED8FE000F684A /* OSKManagedAccount.m in Sources */,
+				EA3DC65F1936246200D61791 /* OSKLogoutActivity.m in Sources */,
 				7FA91AF71889F61D00A5DF9B /* OSKReadingListActivity.m in Sources */,
 				7FEE78E6181ED8FE000F684A /* OSKPresentationManager.m in Sources */,
 				7F55A30E18425C6C004A3BCC /* OSKSessionController_Phone.m in Sources */,
@@ -1742,6 +1750,7 @@
 				7F04946C188AFE5400BE7C4E /* NSString+OSKEmoji.m in Sources */,
 				7FEE78B8181ED8FE000F684A /* OSK1PasswordBrowserActivity.m in Sources */,
 				7FEE78E3181ED8FE000F684A /* OSKPinboardActivity.m in Sources */,
+				EA3DC663193624D200D61791 /* OSKVKontakteActivity.m in Sources */,
 				7FEE78F8181ED8FE000F684A /* UIColor+OSKUtility.m in Sources */,
 				7FEE78DF181ED8FE000F684A /* OSKNavigationController.m in Sources */,
 				7FEE78D5181ED8FE000F684A /* OSKInMemoryImageCache.m in Sources */,
@@ -1781,7 +1790,6 @@
 				7FEE78B1181ED8FE000F684A /* NSDate+OSK_ISO8601.m in Sources */,
 				7FCD02821853975D005C5931 /* OSKActivityToggleCell.m in Sources */,
 				7FE4109F1821994B00B13AB1 /* OSKFacebookPublishingViewController.m in Sources */,
-				EAA461911911340000BFB32F /* OSKVKontakteActivity.m in Sources */,
 				7FEE78B4181ED8FE000F684A /* NSMutableURLRequest+OSKUtilities.m in Sources */,
 				EA48BBF2193332E9001C8403 /* NSData+APCommonCrypto.m in Sources */,
 				7FEE78EC181ED8FE000F684A /* OSKShareableContentItem.m in Sources */,

@@ -23,6 +23,7 @@ NSString * const OSKShareableContentItemType_PasswordManagementAppSearch = @"OSK
 NSString * const OSKShareableContentItemType_ToDoListEntry = @"OSKShareableContentItemType_ToDoListEntry";
 NSString * const OSKShareableContentItemType_AirDrop = @"OSKShareableContentItemType_AirDrop";
 NSString * const OSKShareableContentItemType_TextEditing = @"OSKShareableContentItemType_TextEditing";
+NSString * const OSKShareableContentItemType_Logout = @"OSKShareableContentItemType_Logout";
 
 @implementation OSKShareableContentItem
 
@@ -37,6 +38,14 @@ NSString * const OSKShareableContentItemType_TextEditing = @"OSKShareableContent
 - (NSString *)itemType {
     NSAssert(NO, @"OSKShareableContentItem subclasses must override itemType without calling super.");
     return nil;
+}
+
+@end
+
+@implementation OSKLogoutItem
+
+- (NSString *)itemType {
+    return OSKShareableContentItemType_Logout;
 }
 
 @end

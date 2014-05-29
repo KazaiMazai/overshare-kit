@@ -37,15 +37,19 @@
 #pragma mark - Generic Authentication
 
 - (BOOL)isAuthenticated {
-    return ([VKSdk isLoggedIn] || [VKSdk wakeUpSession]);
+    return [VKSdk isLoggedIn];
 }
 
 - (void)authenticate:(OSKGenericAuthenticationCompletionHandler)completion {
     [self setCompletionHandler:completion];
     [self startAuthenticationTimeoutTimer];
-    [VKSdk authorize:@[VK_PER_WALL,VK_PER_PHOTOS]];
+
+    [VKSdk authorize:@[VK_PER_WALL,VK_PER_PHOTOS] revokeAccess:YES];
 }
 
+- (void) logoutWithGenericAuthentication {
+    [VKSdk forceLogout];
+}
 #pragma mark - Methods for OSKActivity Subclasses
 
 + (NSString *)supportedContentItemType {
