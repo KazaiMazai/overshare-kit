@@ -900,6 +900,18 @@
 		EAB19C461901223A007A8D31 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EAB19C4819012242007A8D31 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		EAB19C4A19012250007A8D31 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		EACC32781938A78B007B05DD /* vk-icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vk-icon-76@2x.png"; sourceTree = "<group>"; };
+		EACC327C1938A79B007B05DD /* vk-icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vk-icon-29.png"; sourceTree = "<group>"; };
+		EACC327D1938A79B007B05DD /* vk-icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vk-icon-29@2x.png"; sourceTree = "<group>"; };
+		EACC327E1938A79B007B05DD /* vk-icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vk-icon-60.png"; sourceTree = "<group>"; };
+		EACC327F1938A79B007B05DD /* vk-icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vk-icon-60@2x.png"; sourceTree = "<group>"; };
+		EACC32801938A79B007B05DD /* vk-icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vk-icon-76.png"; sourceTree = "<group>"; };
+		EACC32931938A874007B05DD /* logout-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-29.png"; sourceTree = "<group>"; };
+		EACC32941938A874007B05DD /* logout-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-29@2x.png"; sourceTree = "<group>"; };
+		EACC32951938A874007B05DD /* logout-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-60.png"; sourceTree = "<group>"; };
+		EACC32961938A874007B05DD /* logout-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-60@2x.png"; sourceTree = "<group>"; };
+		EACC32971938A874007B05DD /* logout-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-76.png"; sourceTree = "<group>"; };
+		EACC32981938A874007B05DD /* logout-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-76@2x.png"; sourceTree = "<group>"; };
 		EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "evernote-sdk-ios.xcodeproj"; sourceTree = "<group>"; };
 		EAE60BC0190AAEE50027F5EA /* Evernote-Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Evernote-Icon-29.png"; sourceTree = "<group>"; };
 		EAE60BC1190AAEE50027F5EA /* Evernote-Icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Evernote-Icon-29@2x.png"; sourceTree = "<group>"; };
@@ -1273,6 +1285,18 @@
 		7FEE77DD181ED8FE000F684A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EACC32931938A874007B05DD /* logout-29.png */,
+				EACC32941938A874007B05DD /* logout-29@2x.png */,
+				EACC32951938A874007B05DD /* logout-60.png */,
+				EACC32961938A874007B05DD /* logout-60@2x.png */,
+				EACC32971938A874007B05DD /* logout-76.png */,
+				EACC32981938A874007B05DD /* logout-76@2x.png */,
+				EACC327C1938A79B007B05DD /* vk-icon-29.png */,
+				EACC327D1938A79B007B05DD /* vk-icon-29@2x.png */,
+				EACC327E1938A79B007B05DD /* vk-icon-60.png */,
+				EACC327F1938A79B007B05DD /* vk-icon-60@2x.png */,
+				EACC32801938A79B007B05DD /* vk-icon-76.png */,
+				EACC32781938A78B007B05DD /* vk-icon-76@2x.png */,
 				EAE60BC0190AAEE50027F5EA /* Evernote-Icon-29.png */,
 				EAE60BC1190AAEE50027F5EA /* Evernote-Icon-29@2x.png */,
 				EAE60BC2190AAEE50027F5EA /* Evernote-Icon-60.png */,

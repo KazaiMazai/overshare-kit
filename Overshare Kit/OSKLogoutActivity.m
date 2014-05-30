@@ -62,15 +62,15 @@
 + (UIImage *)iconForIdiom:(UIUserInterfaceIdiom)idiom {
     UIImage *image = nil;
     if (idiom == UIUserInterfaceIdiomPhone) {
-        image = [UIImage imageNamed:@"Evernote-Icon-60.png"];
+        image = [UIImage imageNamed:@"logout-60.png"];
     } else {
-        image = [UIImage imageNamed:@"Evernote-Icon-76.png"];
+        image = [UIImage imageNamed:@"logout-76.png"];
     }
     return image;
 }
 
 + (UIImage *)settingsIcon {
-    return [UIImage imageNamed:@"Evernote-Icon-29.png"];
+    return [UIImage imageNamed:@"logout-29.png"];
 }
 
 + (OSKAuthenticationMethod)authenticationMethod {
