@@ -9,6 +9,7 @@
 #import "OSKVKontakteActivity.h"
 #import "OSKPresentationManager.h"
 #import "OSKShareableContentItem.h"
+#import "OSKApplicationCredential.h"
 #import <VKSdk.h>
 
 @interface OSKVKontakteActivity() <VKSdkDelegate>
@@ -25,7 +26,10 @@
 - (instancetype)initWithContentItem:(OSKShareableContentItem *)item {
     self = [super initWithContentItem:item];
     if (self) {
-        [VKSdk instance].delegate = self;
+        OSKApplicationCredential *credentials = [self.class applicationCredential];
+        if (credentials) {
+            [VKSdk initializeWithDelegate:self andAppId:credentials.applicationKey];
+        }
     }
     return self;
 }
@@ -57,7 +61,11 @@
 }
 
 + (BOOL)isAvailable {
-    return YES;
+    OSKApplicationCredential *credentials = [self.class applicationCredential];
+    if (credentials) {
+        return YES;
+    }
+    return NO;
 }
 
 + (NSString *)activityType {
@@ -87,7 +95,7 @@
 }
 
 + (BOOL)requiresApplicationCredential {
-    return NO;
+    return YES;
 }
 
 + (OSKPublishingMethod)publishingMethod {

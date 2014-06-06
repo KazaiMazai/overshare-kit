@@ -15,6 +15,7 @@
 #import "NSString+XMLAdditions.h"
 #import "NSString+HTMLParsing.h"
 #import "NSData+APCommonCrypto.h"
+#import "OSKApplicationCredential.h"
 
 #define kENMLPrefix @"<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE en-note SYSTEM \"http://xml.evernote.com/pub/enml2.dtd\"><en-note style=\"word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;\">"
 #define kENMLSuffix @"</en-note>"
@@ -32,6 +33,10 @@
 - (instancetype)initWithContentItem:(OSKShareableContentItem *)item {
     self = [super initWithContentItem:item];
     if (self) {
+        OSKApplicationCredential *credentials = [self.class applicationCredential];
+        if (credentials) {
+            [EvernoteSession setSharedSessionHost:BootstrapServerBaseURLStringUS consumerKey:credentials.applicationKey consumerSecret:credentials.applicationSecret];
+        }
     }
     return self;
 }
@@ -90,7 +95,11 @@
 }
 
 + (BOOL)isAvailable {
-    return  YES;
+    OSKApplicationCredential *credentials = [self.class applicationCredential];
+    if (credentials) {
+        return YES;
+    }
+    return NO;
 }
 
 + (NSString *)activityType {
@@ -120,7 +129,7 @@
 }
 
 + (BOOL)requiresApplicationCredential {
-    return NO;
+    return YES;
 }
 
 + (OSKPublishingMethod)publishingMethod {
