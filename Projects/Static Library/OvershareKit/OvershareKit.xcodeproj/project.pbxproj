@@ -144,7 +144,6 @@
 		EA56073B193F5E7600D60E34 /* OSKCopyToPasteboardActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560653193F5E7600D60E34 /* OSKCopyToPasteboardActivity.m */; };
 		EA56073C193F5E7600D60E34 /* OSKDraftsActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560656193F5E7600D60E34 /* OSKDraftsActivity.m */; };
 		EA56073D193F5E7600D60E34 /* OSKEmailActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560659193F5E7600D60E34 /* OSKEmailActivity.m */; };
-		EA56073E193F5E7600D60E34 /* OSKEvernoteActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56065C193F5E7600D60E34 /* OSKEvernoteActivity.m */; };
 		EA56073F193F5E7600D60E34 /* OSKFacebookActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56065F193F5E7600D60E34 /* OSKFacebookActivity.m */; };
 		EA560740193F5E7600D60E34 /* OSKFacebookUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560661193F5E7600D60E34 /* OSKFacebookUtility.m */; };
 		EA560741193F5E7600D60E34 /* OSKInstapaperActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560664193F5E7600D60E34 /* OSKInstapaperActivity.m */; };
@@ -238,7 +237,6 @@
 		EA5607E8193F5EA300D60E34 /* OSKCopyToPasteboardActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA560652193F5E7600D60E34 /* OSKCopyToPasteboardActivity.h */; };
 		EA5607E9193F5EA300D60E34 /* OSKDraftsActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA560655193F5E7600D60E34 /* OSKDraftsActivity.h */; };
 		EA5607EA193F5EA300D60E34 /* OSKEmailActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA560658193F5E7600D60E34 /* OSKEmailActivity.h */; };
-		EA5607EB193F5EA300D60E34 /* OSKEvernoteActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA56065B193F5E7600D60E34 /* OSKEvernoteActivity.h */; };
 		EA5607EC193F5EA300D60E34 /* OSKFacebookActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA56065E193F5E7600D60E34 /* OSKFacebookActivity.h */; };
 		EA5607ED193F5EA300D60E34 /* OSKFacebookUtility.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA560660193F5E7600D60E34 /* OSKFacebookUtility.h */; };
 		EA5607EE193F5EA300D60E34 /* OSKInstapaperActivity.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA560663193F5E7600D60E34 /* OSKInstapaperActivity.h */; };
@@ -365,7 +363,6 @@
 		EAB19C4519012230007A8D31 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C4419012230007A8D31 /* Security.framework */; };
 		EAB19C471901223A007A8D31 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C461901223A007A8D31 /* StoreKit.framework */; };
 		EAB19C4919012242007A8D31 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB19C4819012242007A8D31 /* MobileCoreServices.framework */; };
-		EAE60B61190A89EF0027F5EA /* libevernote-sdk-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE60B4D190A83F30027F5EA /* libevernote-sdk-ios.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -411,13 +408,6 @@
 			remoteGlobalIDString = 0BDBBC431550A11A003E6681;
 			remoteInfo = UnitTests;
 		};
-		EAE60B5C190A89E50027F5EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 0BB3D1AC1524ED96001C4534;
-			remoteInfo = "evernote-sdk-ios";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -445,7 +435,6 @@
 				EA5607E8193F5EA300D60E34 /* OSKCopyToPasteboardActivity.h in CopyFiles */,
 				EA5607E9193F5EA300D60E34 /* OSKDraftsActivity.h in CopyFiles */,
 				EA5607EA193F5EA300D60E34 /* OSKEmailActivity.h in CopyFiles */,
-				EA5607EB193F5EA300D60E34 /* OSKEvernoteActivity.h in CopyFiles */,
 				EA5607EC193F5EA300D60E34 /* OSKFacebookActivity.h in CopyFiles */,
 				EA5607ED193F5EA300D60E34 /* OSKFacebookUtility.h in CopyFiles */,
 				EA5607EE193F5EA300D60E34 /* OSKInstapaperActivity.h in CopyFiles */,
@@ -713,8 +702,6 @@
 		EA560656193F5E7600D60E34 /* OSKDraftsActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSKDraftsActivity.m; sourceTree = "<group>"; };
 		EA560658193F5E7600D60E34 /* OSKEmailActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKEmailActivity.h; sourceTree = "<group>"; };
 		EA560659193F5E7600D60E34 /* OSKEmailActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSKEmailActivity.m; sourceTree = "<group>"; };
-		EA56065B193F5E7600D60E34 /* OSKEvernoteActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKEvernoteActivity.h; sourceTree = "<group>"; };
-		EA56065C193F5E7600D60E34 /* OSKEvernoteActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSKEvernoteActivity.m; sourceTree = "<group>"; };
 		EA56065E193F5E7600D60E34 /* OSKFacebookActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKFacebookActivity.h; sourceTree = "<group>"; };
 		EA56065F193F5E7600D60E34 /* OSKFacebookActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSKFacebookActivity.m; sourceTree = "<group>"; };
 		EA560660193F5E7600D60E34 /* OSKFacebookUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSKFacebookUtility.h; sourceTree = "<group>"; };
@@ -995,7 +982,6 @@
 				EAB19C4519012230007A8D31 /* Security.framework in Frameworks */,
 				139FC8AF189FE8F40040414A /* UIKit.framework in Frameworks */,
 				7FEE766E181ED867000F684A /* Foundation.framework in Frameworks */,
-				EAE60B61190A89EF0027F5EA /* libevernote-sdk-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1278,7 +1264,6 @@
 				EA560651193F5E7600D60E34 /* CopyToPasteboard */,
 				EA560654193F5E7600D60E34 /* Drafts */,
 				EA560657193F5E7600D60E34 /* Email */,
-				EA56065A193F5E7600D60E34 /* Evernote */,
 				EA56065D193F5E7600D60E34 /* Facebook */,
 				EA560662193F5E7600D60E34 /* Instapaper */,
 				EA560667193F5E7600D60E34 /* Microblogging */,
@@ -1370,15 +1355,6 @@
 				EA560659193F5E7600D60E34 /* OSKEmailActivity.m */,
 			);
 			path = Email;
-			sourceTree = "<group>";
-		};
-		EA56065A193F5E7600D60E34 /* Evernote */ = {
-			isa = PBXGroup;
-			children = (
-				EA56065B193F5E7600D60E34 /* OSKEvernoteActivity.h */,
-				EA56065C193F5E7600D60E34 /* OSKEvernoteActivity.m */,
-			);
-			path = Evernote;
 			sourceTree = "<group>";
 		};
 		EA56065D193F5E7600D60E34 /* Facebook */ = {
@@ -1845,7 +1821,6 @@
 			);
 			dependencies = (
 				EAA4618D1911331000BFB32F /* PBXTargetDependency */,
-				EAE60B5D190A89E50027F5EA /* PBXTargetDependency */,
 			);
 			name = OvershareKit;
 			productName = OvershareKit;
@@ -2108,7 +2083,6 @@
 				EA56088D193F5FF300D60E34 /* UIViewController+OSKUtilities.m in Sources */,
 				EA560755193F5E7600D60E34 /* OSKActivityIcon.m in Sources */,
 				EA56077A193F5E7600D60E34 /* OSKActivityCollectionViewCell.m in Sources */,
-				EA56073E193F5E7600D60E34 /* OSKEvernoteActivity.m in Sources */,
 				EA56074F193F5E7600D60E34 /* OSKTwitterActivity.m in Sources */,
 				EA560888193F5FF300D60E34 /* NSString+OSKEmoji.m in Sources */,
 				EA560753193F5E7600D60E34 /* OSKVKontakteActivity.m in Sources */,
@@ -2185,11 +2159,6 @@
 			isa = PBXTargetDependency;
 			name = VKSdk;
 			targetProxy = EAA4618C1911331000BFB32F /* PBXContainerItemProxy */;
-		};
-		EAE60B5D190A89E50027F5EA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "evernote-sdk-ios";
-			targetProxy = EAE60B5C190A89E50027F5EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
