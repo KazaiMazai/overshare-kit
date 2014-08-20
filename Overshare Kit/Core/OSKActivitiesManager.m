@@ -38,6 +38,8 @@
 #import "OSKTwitterActivity.h"
 #import "OSKEvernoteActivity.h"
 #import "OSKVKontakteActivity.h"
+#import "OSKLogoutActivity.h"
+#import "OSKManagedAccountStore.h"
 
 
 #if DEBUG == 1
@@ -61,6 +63,8 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
 @property (strong, nonatomic) NSMutableSet *activityTypesRequiringPurchase;
 @property (strong, nonatomic) NSMutableSet *purchasedActivityTypes;
 @property (strong, nonatomic) NSMutableSet *persistentExclusions;
+
+@property (strong, nonatomic) NSArray *currentValidActivities;
 
 @end
 
@@ -190,7 +194,12 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
             activitiesToAdd = [self builtInActivitiesForTextEditingItem:(OSKTextEditingContentItem *)item
                                                   excludedActivityTypes:excludedActivityTypes
                                                       requireOperations:requireOperations];
+        } else if ([item.itemType isEqualToString:OSKShareableContentItemType_Logout]) {
+            activitiesToAdd = [self builtInActivitiesForLogoutItem:(OSKLogoutItem *)item
+                                              excludedActivityTypes:excludedActivityTypes
+                                                  requireOperations:requireOperations];
         }
+        
         
         [validActivities addObjectsFromArray:activitiesToAdd];
         
@@ -210,6 +219,7 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
         }
     }
     
+    self.currentValidActivities = validActivities;
     return validActivities;
 }
 
@@ -279,6 +289,10 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
             [sortedItems addObjectsFromArray:customContentItems.allObjects];
         }
     }
+    
+    if (content.logoutItem) { [sortedItems addObject:content.logoutItem]; }
+    additionals = [self contentItemsOfType:OSKShareableContentItemType_Logout inArray:content.additionalItems];
+    [sortedItems addObjectsFromArray:additionals];
 
     return sortedItems;
 }
@@ -501,6 +515,20 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
     return activities;
 }
 
+- (NSArray *)builtInActivitiesForLogoutItem:(OSKLogoutItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
+    NSMutableArray *activities = [[NSMutableArray alloc] init];
+    
+    OSKLogoutActivity *logout = [self validActivityForType:[OSKLogoutActivity activityType]
+                                                       class:[OSKLogoutActivity class]
+                                               excludedTypes:excludedActivityTypes
+                                           requireOperations:requireOperations
+                                                        item:item];
+    if (logout) { [activities addObject:logout]; }
+    
+    return activities;
+}
+
+
 - (NSArray *)builtInActivitiesForAirDropItem:(OSKAirDropContentItem *)item excludedActivityTypes:(NSArray *)excludedActivityTypes requireOperations:(BOOL)requireOperations {
     NSMutableArray *activities = [[NSMutableArray alloc] init];
     
@@ -550,6 +578,28 @@ static NSString * OSKActivitiesManagerPersistentExclusionsKey = @"OSKActivitiesM
     }
     return activity;
 }
+
+#pragma mark - Manage Actitivies
+
+
+- (void) logoutFromCurrentActivities {
+    for (OSKActivity *item in self.currentValidActivities) {
+        if ([item respondsToSelector:@selector(logoutWithGenericAuthentication)]){
+            OSKActivity <OSKActivity_GenericAuthentication> *activity = (OSKActivity <OSKActivity_GenericAuthentication> *) item;
+            [activity logoutWithGenericAuthentication];
+        } else {
+            Class activityClass = [item class];
+            NSString *activityType = [activityClass activityType];
+            NSArray *accounts = [[OSKManagedAccountStore sharedInstance] accountsForActivityType:activityType];
+            for (OSKManagedAccount *account in accounts) {
+                [[OSKManagedAccountStore sharedInstance] removeAccount:account forActivityType:activityType];
+            }
+            
+        }
+    }
+    
+}
+
 
 #pragma mark - Persistent Exclusions
 

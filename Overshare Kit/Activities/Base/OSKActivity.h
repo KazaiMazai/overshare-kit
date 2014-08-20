@@ -41,6 +41,7 @@ extern NSString * const OSKActivityType_URLScheme_Drafts;
 extern NSString * const OSKActivityType_SDK_Pocket;
 extern NSString * const OSKActivityType_SDK_Evernote;
 extern NSString * const OSKActivityType_SDK_Vkontakte;
+extern NSString * const OSKActivityType_Logout;
 
 
 @class OSKActivity;

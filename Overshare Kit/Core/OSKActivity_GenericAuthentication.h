@@ -38,6 +38,8 @@ typedef void(^OSKGenericAuthenticationCompletionHandler)(BOOL successful, NSErro
  */
 - (void)authenticate:(OSKGenericAuthenticationCompletionHandler)completion;
 
+- (void)logoutWithGenericAuthentication;
+
 @end
 
 

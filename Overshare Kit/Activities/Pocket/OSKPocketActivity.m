@@ -10,6 +10,7 @@
 
 #import "PocketAPI.h"
 #import "OSKShareableContentItem.h"
+#import "OSKApplicationCredential.h"
 
 @interface OSKPocketActivity ()
 
@@ -24,6 +25,11 @@
 - (instancetype)initWithContentItem:(OSKShareableContentItem *)item {
     self = [super initWithContentItem:item];
     if (self) {
+        OSKApplicationCredential *credentials = [self.class applicationCredential];
+        if (credentials) {
+            [[PocketAPI sharedAPI] setConsumerKey:credentials.applicationKey];
+        }
+        
     }
     return self;
 }
@@ -52,6 +58,10 @@
     }];
 }
 
+- (void) logoutWithGenericAuthentication {
+    [[PocketAPI sharedAPI] logout];
+}
+
 #pragma mark - Methods for OSKActivity Subclasses
 
 + (NSString *)supportedContentItemType {
@@ -59,7 +69,11 @@
 }
 
 + (BOOL)isAvailable {
-    return ([[PocketAPI sharedAPI] consumerKey].length > 0);
+    OSKApplicationCredential *credentials = [self.class applicationCredential];
+    if (credentials) {
+        return YES;
+    }
+    return NO;
 }
 
 + (NSString *)activityType {
@@ -89,7 +103,7 @@
 }
 
 + (BOOL)requiresApplicationCredential {
-    return NO;
+    return YES;
 }
 
 + (OSKPublishingMethod)publishingMethod {
