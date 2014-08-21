@@ -213,17 +213,9 @@
 		EA560781193F5E7600D60E34 /* NSCoder+OSKCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560711193F5E7600D60E34 /* NSCoder+OSKCoder.m */; };
 		EA560782193F5E7600D60E34 /* NSData+APCommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560713193F5E7600D60E34 /* NSData+APCommonCrypto.m */; };
 		EA560783193F5E7600D60E34 /* NSData+OSKDerp.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560715193F5E7600D60E34 /* NSData+OSKDerp.m */; };
-		EA560784193F5E7600D60E34 /* NSDate+OSK_ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560717193F5E7600D60E34 /* NSDate+OSK_ISO8601.m */; };
-		EA560785193F5E7600D60E34 /* NSDictionary+OSKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560719193F5E7600D60E34 /* NSDictionary+OSKModel.m */; };
 		EA560786193F5E7600D60E34 /* NSHTTPURLResponse+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56071B193F5E7600D60E34 /* NSHTTPURLResponse+OSKUtilities.m */; };
-		EA560788193F5E7600D60E34 /* NSString+HTMLParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56071F193F5E7600D60E34 /* NSString+HTMLParsing.m */; };
-		EA560789193F5E7600D60E34 /* NSString+OSK_UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560721193F5E7600D60E34 /* NSString+OSK_UUID.m */; };
 		EA56078A193F5E7600D60E34 /* NSString+OSKDerp.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560723193F5E7600D60E34 /* NSString+OSKDerp.m */; };
-		EA56078B193F5E7600D60E34 /* NSString+OSKEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560725193F5E7600D60E34 /* NSString+OSKEmoji.m */; };
-		EA56078C193F5E7600D60E34 /* UIColor+OSKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560727193F5E7600D60E34 /* UIColor+OSKUtility.m */; };
-		EA56078D193F5E7600D60E34 /* UIDevice+OSKHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560729193F5E7600D60E34 /* UIDevice+OSKHardware.m */; };
 		EA56078E193F5E7600D60E34 /* UIImage+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56072B193F5E7600D60E34 /* UIImage+OSKUtilities.m */; };
-		EA56078F193F5E7600D60E34 /* UIView+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56072D193F5E7600D60E34 /* UIView+OSKUtilities.m */; };
 		EA560790193F5E7600D60E34 /* UIViewController+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56072F193F5E7600D60E34 /* UIViewController+OSKUtilities.m */; };
 		EA560791193F5E7600D60E34 /* OSKKeychainUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560731193F5E7600D60E34 /* OSKKeychainUtility.m */; };
 		EA560792193F5E7600D60E34 /* OSKLinkShorteningUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560733193F5E7600D60E34 /* OSKLinkShorteningUtility.m */; };
@@ -343,20 +335,15 @@
 		EA560853193F5EB400D60E34 /* OSKTextView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA56070A193F5E7600D60E34 /* OSKTextView.h */; };
 		EA560854193F5EB400D60E34 /* OSKUsernamePasswordCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA56070C193F5E7600D60E34 /* OSKUsernamePasswordCell.h */; };
 		EA560855193F5EB400D60E34 /* OvershareKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7FEE7672181ED867000F684A /* OvershareKit.h */; };
-		EA56087E193F5FF300D60E34 /* NSCoder+OSKCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560859193F5FF300D60E34 /* NSCoder+OSKCoder.m */; };
 		EA560881193F5FF300D60E34 /* NSDate+OSK_ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56085F193F5FF300D60E34 /* NSDate+OSK_ISO8601.m */; };
 		EA560882193F5FF300D60E34 /* NSDictionary+OSKModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560861193F5FF300D60E34 /* NSDictionary+OSKModel.m */; };
-		EA560883193F5FF300D60E34 /* NSHTTPURLResponse+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560863193F5FF300D60E34 /* NSHTTPURLResponse+OSKUtilities.m */; };
 		EA560884193F5FF300D60E34 /* NSMutableURLRequest+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560865193F5FF300D60E34 /* NSMutableURLRequest+OSKUtilities.m */; };
 		EA560885193F5FF300D60E34 /* NSString+HTMLParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560867193F5FF300D60E34 /* NSString+HTMLParsing.m */; };
 		EA560886193F5FF300D60E34 /* NSString+OSK_UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560869193F5FF300D60E34 /* NSString+OSK_UUID.m */; };
-		EA560887193F5FF300D60E34 /* NSString+OSKDerp.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56086B193F5FF300D60E34 /* NSString+OSKDerp.m */; };
 		EA560888193F5FF300D60E34 /* NSString+OSKEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56086D193F5FF300D60E34 /* NSString+OSKEmoji.m */; };
 		EA560889193F5FF300D60E34 /* UIColor+OSKUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = EA56086F193F5FF300D60E34 /* UIColor+OSKUtility.m */; };
 		EA56088A193F5FF300D60E34 /* UIDevice+OSKHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560871193F5FF300D60E34 /* UIDevice+OSKHardware.m */; };
-		EA56088B193F5FF300D60E34 /* UIImage+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560873193F5FF300D60E34 /* UIImage+OSKUtilities.m */; };
 		EA56088C193F5FF300D60E34 /* UIView+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560875193F5FF300D60E34 /* UIView+OSKUtilities.m */; };
-		EA56088D193F5FF300D60E34 /* UIViewController+OSKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EA560877193F5FF300D60E34 /* UIViewController+OSKUtilities.m */; };
 		EA5608A5193F69E300D60E34 /* OSKLogoutActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5608A4193F69E300D60E34 /* OSKLogoutActivity.m */; };
 		EA7FB4E7190AB5350098F101 /* OvershareKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7FE4109D1821994B00B13AB1 /* OvershareKit.h */; };
 		EAA4618E1911331600BFB32F /* libVKSdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA4615E191132A400BFB32F /* libVKSdk.a */; };
@@ -386,27 +373,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = F3C7542C182133CC00964716;
 			remoteInfo = VKSdk;
-		};
-		EAE60B4C190A83F30027F5EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0BB3D1AD1524ED96001C4534;
-			remoteInfo = "evernote-sdk-ios";
-		};
-		EAE60B4E190A83F30027F5EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0BB3D26E1524EF37001C4534;
-			remoteInfo = SampleApp;
-		};
-		EAE60B50190A83F30027F5EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0BDBBC431550A11A003E6681;
-			remoteInfo = UnitTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -954,7 +920,6 @@
 		EACC32961938A874007B05DD /* logout-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-60@2x.png"; sourceTree = "<group>"; };
 		EACC32971938A874007B05DD /* logout-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-76.png"; sourceTree = "<group>"; };
 		EACC32981938A874007B05DD /* logout-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout-76@2x.png"; sourceTree = "<group>"; };
-		EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "evernote-sdk-ios.xcodeproj"; sourceTree = "<group>"; };
 		EAE60BC0190AAEE50027F5EA /* Evernote-Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Evernote-Icon-29.png"; sourceTree = "<group>"; };
 		EAE60BC1190AAEE50027F5EA /* Evernote-Icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Evernote-Icon-29@2x.png"; sourceTree = "<group>"; };
 		EAE60BC2190AAEE50027F5EA /* Evernote-Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Evernote-Icon-60.png"; sourceTree = "<group>"; };
@@ -1010,7 +975,6 @@
 			isa = PBXGroup;
 			children = (
 				EAA461551911327800BFB32F /* vk-ios-sdk */,
-				EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */,
 				7F6711F9181EDF900006E037 /* ADNLogin */,
 				7F6711FA181EDF960006E037 /* Pocket */,
 			);
@@ -1779,16 +1743,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EAE60AC7190A83F30027F5EA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EAE60B4D190A83F30027F5EA /* libevernote-sdk-ios.a */,
-				EAE60B4F190A83F30027F5EA /* SampleApp.app */,
-				EAE60B51190A83F30027F5EA /* UnitTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1833,7 +1787,7 @@
 		7FEE7662181ED867000F684A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Overshare Kit";
 			};
 			buildConfigurationList = 7FEE7665181ED867000F684A /* Build configuration list for PBXProject "OvershareKit" */;
@@ -1847,10 +1801,6 @@
 			productRefGroup = 7FEE766B181ED867000F684A /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = EAE60AC7190A83F30027F5EA /* Products */;
-					ProjectRef = EAE60AC6190A83F30027F5EA /* evernote-sdk-ios.xcodeproj */;
-				},
 				{
 					ProductGroup = EAA46159191132A400BFB32F /* Products */;
 					ProjectRef = EAA46158191132A400BFB32F /* sdk.xcodeproj */;
@@ -1877,27 +1827,6 @@
 			fileType = wrapper.cfbundle;
 			path = VKSdkResources.bundle;
 			remoteRef = EAA4615F191132A400BFB32F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EAE60B4D190A83F30027F5EA /* libevernote-sdk-ios.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libevernote-sdk-ios.a";
-			remoteRef = EAE60B4C190A83F30027F5EA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EAE60B4F190A83F30027F5EA /* SampleApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = SampleApp.app;
-			remoteRef = EAE60B4E190A83F30027F5EA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EAE60B51190A83F30027F5EA /* UnitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = UnitTests.octest;
-			remoteRef = EAE60B50190A83F30027F5EA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2080,7 +2009,6 @@
 				EA560781193F5E7600D60E34 /* NSCoder+OSKCoder.m in Sources */,
 				EA56073C193F5E7600D60E34 /* OSKDraftsActivity.m in Sources */,
 				EA560780193F5E7600D60E34 /* OSKUsernamePasswordCell.m in Sources */,
-				EA56088D193F5FF300D60E34 /* UIViewController+OSKUtilities.m in Sources */,
 				EA560755193F5E7600D60E34 /* OSKActivityIcon.m in Sources */,
 				EA56077A193F5E7600D60E34 /* OSKActivityCollectionViewCell.m in Sources */,
 				EA56074F193F5E7600D60E34 /* OSKTwitterActivity.m in Sources */,
@@ -2111,18 +2039,11 @@
 				EA56076D193F5E7600D60E34 /* OSKAppDotNetAuthenticationViewController.m in Sources */,
 				EA560743193F5E7600D60E34 /* OSKOmnifocusActivity.m in Sources */,
 				EA560777193F5E7600D60E34 /* OSKActionSheet.m in Sources */,
-				EA560887193F5FF300D60E34 /* NSString+OSKDerp.m in Sources */,
 				EA56076F193F5E7600D60E34 /* OSKFacebookPublishingViewController.m in Sources */,
-				EA56088B193F5FF300D60E34 /* UIImage+OSKUtilities.m in Sources */,
 				EA560744193F5E7600D60E34 /* OSK1PasswordBrowserActivity.m in Sources */,
-				EA560785193F5E7600D60E34 /* NSDictionary+OSKModel.m in Sources */,
 				EA56077C193F5E7600D60E34 /* OSKActivityToggleCell.m in Sources */,
 				7FEE7675181ED867000F684A /* OvershareKit.m in Sources */,
-				EA56087E193F5FF300D60E34 /* NSCoder+OSKCoder.m in Sources */,
-				EA56078F193F5E7600D60E34 /* UIView+OSKUtilities.m in Sources */,
-				EA560788193F5E7600D60E34 /* NSString+HTMLParsing.m in Sources */,
 				EA560760193F5E7600D60E34 /* OSKSession.m in Sources */,
-				EA560883193F5FF300D60E34 /* NSHTTPURLResponse+OSKUtilities.m in Sources */,
 				EA560769193F5E7600D60E34 /* OSKAccountManagementViewController.m in Sources */,
 				EA560768193F5E7600D60E34 /* OSKAccountChooserViewController.m in Sources */,
 				EA56075B193F5E7600D60E34 /* OSKManagedAccount.m in Sources */,
@@ -2133,22 +2054,17 @@
 				EA560763193F5E7600D60E34 /* OSKSessionController_Phone.m in Sources */,
 				EA560776193F5E7600D60E34 /* OSKWebViewController.m in Sources */,
 				EA560736193F5E7600D60E34 /* OSKAirDropActivity.m in Sources */,
-				EA56078C193F5E7600D60E34 /* UIColor+OSKUtility.m in Sources */,
 				EA56075C193F5E7600D60E34 /* OSKManagedAccountCredential.m in Sources */,
-				EA56078B193F5E7600D60E34 /* NSString+OSKEmoji.m in Sources */,
 				EA560751193F5E7600D60E34 /* OSKTwitterTextEntity.m in Sources */,
 				EA560737193F5E7600D60E34 /* OSKAppDotNetActivity.m in Sources */,
-				EA560784193F5E7600D60E34 /* NSDate+OSK_ISO8601.m in Sources */,
 				EA560741193F5E7600D60E34 /* OSKInstapaperActivity.m in Sources */,
 				EA560762193F5E7600D60E34 /* OSKSessionController_Pad.m in Sources */,
-				EA560789193F5E7600D60E34 /* NSString+OSK_UUID.m in Sources */,
 				EA56076C193F5E7600D60E34 /* OSKAirDropViewController.m in Sources */,
 				EA56074C193F5E7600D60E34 /* OSKSafariActivity.m in Sources */,
 				EA560773193F5E7600D60E34 /* OSKNavigationController.m in Sources */,
 				EA560775193F5E7600D60E34 /* OSKUsernamePasswordViewController.m in Sources */,
 				EA560738193F5E7600D60E34 /* OSKAppDotNetUtility.m in Sources */,
 				EA560745193F5E7600D60E34 /* OSK1PasswordSearchActivity.m in Sources */,
-				EA56078D193F5E7600D60E34 /* UIDevice+OSKHardware.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
