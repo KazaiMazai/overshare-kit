@@ -100,6 +100,9 @@ extern NSString * const OSKPresentationOption_PresentationEndingHandler;
  the accepted keys are `OSKPresentationOption_ActivityCompletionHandler` and 
  `OSKPresentationOption_PresentationEndingHandler`.
  */
+
+- (void)hidePresentingActivitySheet;
+
 - (void)presentActivitySheetForContent:(OSKShareableContent *)content
               presentingViewController:(UIViewController *)presentingViewController
                                options:(NSDictionary *)options;

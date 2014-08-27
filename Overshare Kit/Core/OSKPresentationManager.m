@@ -143,6 +143,10 @@ static NSInteger OSKTextViewFontSize_Pad = 20.0f;
                               animated:(BOOL)animated
                                options:(NSDictionary *)options {
     
+    if (self.popoverController !=nil) {
+        return;
+    }
+    
     [self setPresentingViewController:presentingViewController];
     
     NSArray *activities = nil;
@@ -196,6 +200,11 @@ static NSInteger OSKTextViewFontSize_Pad = 20.0f;
     } else {
         OSKLog(@"Attempting to present a second activity sheet while the first is still visible.");
     }
+}
+
+
+- (void)hidePresentingActivitySheet {
+    [self dismissActivitySheet:nil];
 }
 
 - (void)dismissActivitySheet:(void(^)(void))completion {
